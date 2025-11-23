@@ -2,12 +2,77 @@
 Nguyễn Thành Huy -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Cambridge Dictionary | English Dictionary Translations & Thesaurus</title>
+    <link rel="icon" type="image/png" class="logo" href="./imgage/logo2.png">
 </head>
+
 <body>
-    
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <nav class="top-nav">
+            <div class="nav-left">
+                <div class="hamburger">☰</div>
+                <ul class="nav-links">
+                    <li><a href="#">Dictionary</a></li>
+                    <li><a href="#">Translate</a></li>
+                    <li><a href="#">Grammar</a></li>
+                    <li><a href="#">Thesaurus</a></li>
+                    <li><a href="#">Cambridge Dictionary +Plus</a></li>
+                    <li><a href="#">Games</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a> <!-- Facebook -->
+                    <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a> <!-- Instagram -->
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a> <!-- X (Twitter) -->
+                </div>
+                <div class="login-signup"><i class="fa-solid fa-user fa-xs"></i> Log in / Sign up</div>
+                <div class="language-selector">
+                    <i class="fa-solid fa-earth-americas fa-xs"></i> 
+                    <div class="language-english">English (UK)</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="logo">
+                <img src="./imgage/CDO-logo-horizontal-negative.svg" alt="logo" class="badge">
+                <!-- <div class="badge"></div>
+                <div class="logo-text">Cambridge Dictionary</div> -->
+            </div>
+        </div>
+
+        <!-- Search Bar Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search English–Vietnamese">
+                <div class="language-select">
+                    English–Vietnamese
+                    <span class="menu-dots">⋮</span>
+                </div>
+                <button class="search-btn"></button>
+            </div>
+        </div>
+
+        <!-- Small Buttons Section -->
+        <div class="button-section">
+            <button class="small-btn">English</button>
+            <button class="small-btn">Grammar</button>
+            <button class="small-btn">English–French</button>
+            <button class="small-btn">French–English</button>
+        </div>
+    </header>
 </body>
+
 </html>

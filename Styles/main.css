@@ -1,0 +1,204 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Placeholder for body background */
+        }
+
+        /* Header container with gradient background and curved bottom */
+        .header {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            background: linear-gradient(to bottom, #1f767a 0%, #20b2aa 50%, #006666 100%); /* Teal gradient */
+            overflow: hidden;
+        }
+
+        /* Curved bottom shape using pseudo-element */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Height of the curve */
+            background: #106468; /* Dark teal for the bottom part */
+            border-radius: 50% 50% 0 0; /* Creates a soft curve */
+            clip-path: ellipse(100% 50% at 50% 100%); /* Elliptical curve */
+        }
+
+        /* Top navigation bar */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #5bd1d7; /* Solid teal for nav */
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            font-size: 24px;
+            color: #000;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 5px;
+            color: #000;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .login-signup {
+            margin-right: 20px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .language-english{
+            margin-left: 8px;
+        }
+        
+
+        /* Logo section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* padding: 10px; */
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .badge {
+            width: 400px;
+            height:120px;
+        }
+
+        /* Search bar section */
+        .search-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 25px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .language-select {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            color: #000;
+            font-size: 16px;
+        }
+
+        .menu-dots {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .search-btn {
+            background-color: #ffd700; /* Yellow */
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .search-btn::before {
+            content: '🔍';
+            font-size: 18px;
+        }
+
+        /* Small buttons below search */
+        .button-section {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-btn {
+            background-color: #e0f7fa; /* Light teal */
+            color: #00695c; /* Dark teal */
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
