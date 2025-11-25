@@ -1,0 +1,30 @@
+/* Ẩn nội dung mặc định */
+.accordion-content {
+    display: none; /* Hoặc dùng max-height: 0; overflow: hidden; cho hiệu ứng đẹp hơn */
+    padding-left: 15px;
+    /* Nếu dùng max-height, thêm transition cho hiệu ứng mượt */
+    transition: max-height 0.3s ease-out;
+}
+
+/* Hiển thị nội dung khi được kích hoạt */
+.accordion-content.active {
+    display: block; /* Hoặc set max-height lớn */
+}
+
+/* Định dạng cơ bản cho tiêu đề */
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Xoay icon khi menu mở */
+.accordion-header .icon.active {
+    transform: rotate(45deg); /* Nếu dùng dấu +, nó sẽ nhìn như dấu x. */
+    /* Nếu bạn muốn dấu -: thay đổi nội dung của span bằng JS */
+}
