@@ -198,16 +198,6 @@ a:active {
     color: #1d2a57;
 }
 
-
-
-
-
-
-
-
-
-
-
 .nav-links {
     display: flex;
     list-style: none;
@@ -264,7 +254,6 @@ a:active {
 .language-english {
     margin-left: 8px;
 }
-
 
 /* Logo section */
 .logo-section {
@@ -330,8 +319,6 @@ a:active {
     cursor: pointer;
 }
 
-
-
 /* Small buttons below search */
 .button-section {
     display: flex;
@@ -354,8 +341,6 @@ a:active {
     font-size: 14px;
     cursor: pointer;
 }
-
-
 
 .content {
     width: 1420px;
@@ -527,8 +512,6 @@ a:active {
     margin: 0 50px;
     /* padding: 0 50px 25px; */
 }
-
-
 
 .footer{
     width: 100%;
