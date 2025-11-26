@@ -9,26 +9,33 @@ body {
     background-color: #fff;
     /* Placeholder for body background */
 }
+
 .no-scroll {
     overflow: hidden;
 }
 
 a {
-    color: inherit;              /* Lấy màu chữ từ thẻ cha */
-    text-decoration: none;       /* Bỏ gạch dưới */
-    cursor: pointer;             /* Giữ con trỏ dạng pointer */
+    color: inherit;
+    /* Lấy màu chữ từ thẻ cha */
+    text-decoration: none;
+    /* Bỏ gạch dưới */
+    cursor: pointer;
+    /* Giữ con trỏ dạng pointer */
 }
 
 a:visited {
-    color: inherit;              /* Không đổi màu khi đã click */
+    color: inherit;
+    /* Không đổi màu khi đã click */
 }
 
 a:hover {
-    text-decoration: none;       /* Không gạch dưới khi hover */
+    text-decoration: none;
+    /* Không gạch dưới khi hover */
 }
 
 a:active {
-    color: inherit;              /* Không đổi màu khi đang click */
+    color: inherit;
+    /* Không đổi màu khi đang click */
 }
 
 
@@ -112,7 +119,7 @@ a:active {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    
+
 }
 
 #menu-button {
@@ -134,7 +141,7 @@ a:active {
 
 }
 
-.menu__child a{
+.menu__child a {
     text-decoration: none;
     color: #1d2a57;
 }
@@ -173,19 +180,20 @@ a:active {
     transform: scaleX(1);
 }
 
-.language_choose{
-    height:24px;
+.language_choose {
+    height: 24px;
     font-size: 16px;
     margin-bottom: 5px;
     list-style: none;
     color: #1d2a57;
 }
 
-.language_choose a{
+.language_choose a {
     text-decoration: none;
     color: #1d2a57;
 }
-.language_choose a:hover{
+
+.language_choose a:hover {
     text-decoration: underline;
     color: #1d2a57;
 }
@@ -224,7 +232,7 @@ a:active {
 .social-icons {
     display: flex;
     margin-right: 20px;
-    
+
 }
 
 .social-icons a {
@@ -233,6 +241,7 @@ a:active {
     font-size: 20px;
     text-decoration: none;
 }
+
 .right {
     margin-left: auto;
 }
@@ -259,7 +268,8 @@ a:active {
 
 /* Logo section */
 .logo-section {
-    padding-top: 50px;;
+    padding-top: 50px;
+    ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -350,7 +360,7 @@ a:active {
 .content {
     width: 1420px;
     height: 2367px;
-    margin: 0 50px;
+    margin: 0 auto;
     padding: 45px 20px 0;
     display: flex;
     gap: 0px;
@@ -373,10 +383,126 @@ a:active {
 }
 
 
-.Content_name{
+.Content_name {
     font-size: 30px;
     box-sizing: border-box;
     padding-left: 50px;
     color: rgb(29, 42, 87);
     background: #fff;
+}
+
+.bg {
+    background-color:#006666;
+    width: 60px;
+    height: auto;
+}
+
+.content-language {
+    width: 100%;
+    height: 517px;
+    background-color: #ddfaff;
+    padding: 35px 50px;
+    margin: 25px 0 -25px;
+    display: flex;
+}
+
+.content-language-english {
+    width: 50%;
+    height: 447px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+
+
+.content-language-english-part1{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.content-language-english-part1-ct{
+    flex: 1;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.content-language-english-part1_link {
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px;
+    color: #1d2a57;
+    font-size: 16px;
+    font-weight: 700;
+}
+.content-language-english-part1_link a {
+    text-decoration: none;
+    color: #1d2a57;
+}
+.content-language-english-part1_link a:hover {
+    text-decoration: underline;
+    color: #1d2a57;
+}
+
+.content-language-english-part2{
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.content-language-Grammar{
+    flex:1;
+    padding:20px;
+    padding-left: 10px;
+}
+
+.content-language-Grammar a {
+    text-decoration: none;
+    color: #1d2a57;
+    font-size: 19px;
+    font-weight: 400;
+}
+.content-language-Grammar a:hover {
+    text-decoration: underline;
+    color: #1d2a57;
+}
+
+.content-language-translation {
+    width: 50%;
+    height: 320px;
+    background: #fff;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.content-language-translation-right{
+    height: auto;
+    flex-grow:1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.translation-right-name h4{
+    font-weight: 400;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+.translation-right-note{
+ margin-bottom: 10px;
+ font-size: 15px;
+}
+.translation-right-list ul li{
+    height:auto;
+    list-style: none;
+    padding-top: 0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.translation-right-more{
+    flex:1;
 }
