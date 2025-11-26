@@ -1,2 +1,234 @@
 <!-- https://dictionary.cambridge.org/translate/ -->
+<!-- Trọng Hiểu  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cambridge Dictionary | Translator</title>
+    <link rel="icon" type="image/png" class="logo" href="../imgage/logo2.png">
+</head>
+
+<body class="no-scroll">
+    <header class="header">
+        <!-- Top Navigation Bar --> 
+        <nav class="top-nav">
+            <div class="nav-left">
+                <input type="checkbox" id="menu-button">
+                <label for="menu-button">
+                    <div class="hamburger"><i class="fa-solid fa-list"></i></div>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="../Dictionnary/dictionnary.html">Dictionary</a></li>
+                    <li><a href="../Translate/translate.html">Translate</a></li>
+                    <li><a href="../Grammar/grammar.html">Grammar</a></li>
+                    <li><a href="../Thesaurus/thesaurus.html">Thesaurus</a></li>
+                    <li><a href="../Cambridge/cambridge.html">Cambridge Dictionary +Plus</a></li>
+                    <li><a href="../Game/game.html">Games</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a>
+                </div>
+                <div class="login-signup"><i class="fa-solid fa-user fa-xs"></i><a href="#">Log in</a> / <a href="#">Sign
+                        up</a></div>
+
+                <input type="checkbox" id="language-button">
+                <label for="language-button">
+                    <div class="language-selector">
+                        <i class="fa-solid fa-earth-americas fa-xs"></i>
+                        <div class="language-english">English (UK) <i class="fa-solid fa-angle-down fa-2xs"></i></div>
+                    </div>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../imgage/CDO-logo-horizontal-negative.svg" alt="logo" class="badge">
+                </a>
+            </div>
+        </div>
+
+        <!-- Search Bar Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="search" class="search-input" placeholder="Search English">
+                <div class="language-select">
+                    English
+                    <span class="menu-dots">⋮</span>
+                </div>
+                <div><i class="fa-solid fa-magnifying-glass fa-sm"></i></div>
+            </div>
+        </div>
+
+        <!-- Small Buttons Section -->
+        <div class="button-section">
+            <button class="small-btn">English</button>
+            <button class="small-btn">Grammar</button>
+            <button class="small-btn">English–French</button>
+            <button class="small-btn">French–English</button>
+        </div>
+    </header>
+
+    <!-- Hamburger menu -->
+    <div class="menu">
+        <div class="menu-left">
+            <div
+                style="border-bottom: rgba(0, 0, 0, 0.1) solid 1px;width:100%; height:120px; padding: 15px 15px 20px 15px; position: relative;">
+                <img style="width:168px; height:68px;" src="../imgage/CDO-logo-menu.svg" alt="logo">
+                <label style="position: absolute; top:20px; right:20px;" for="menu-button"><i
+                        class="fa-solid fa-x"></i></label>
+            </div>
+            <div class="menu__child"><a href="../Dictionnary/dictionnary.html">Dictionary</a></div>
+            <div class="menu__child"><a href="../Translate/translate.html">Translate</a></div>
+            <div class="menu__child"><a href="../Grammar/grammar.html">Grammar</a></div>
+            <div class="menu__child"><a href="../Thesaurus/thesaurus.html">Thesaurus</a></div>
+            <div class="menu__child"><a href="#">Pronunciation</a></div>
+            <div class="menu__child"><a href="../Cambridge/cambridge.html">Cambridge Dictionary +Plus</a></div>
+            <div class="menu__child"><a href="../Game/game.html">Games</a></div>
+            <div class="menu__child"><i class="fa-solid fa-user fa-lg"></i><a href="#">Log in</a> / <a href="#">Sign
+                    up</a></div>
+            <div class="menu__child"><i class="fa-solid fa-earth-americas fa-sm"></i> English(UK)</div>
+            <div class="menu__child">
+                <div class="social-icons">
+                    <div>Follow us</div>
+                    <div class="right"><a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a></div>
+                    <div><a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a></div>
+                    <div><a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a></div>
+                </div>
+            </div>
+        </div>
+
+        <label class="menu-right" for="menu-button"></label>
+    </div>
+
+    <!-- Language modal -->
+    <div class="language">
+        <label class="language-right" for="language-button"></label>
+        <div class="language-left">
+            <div
+                style="border-bottom: rgba(0, 0, 0, 0.1) solid 1px;width:100%; height:60px; padding: 20px 5px 15px 15px; position: relative;">
+                <p style="font-size: 1.125rem; color:#1d2a57;">Choose your language</p>
+                <label style="position: absolute; top:20px; right:20px;" for="language-button"><i
+                        class="fa-solid fa-x"></i></label>
+            </div>
+            <div style="padding:15px;">
+                <p style="font-size:16px; color: #1d2a57;"><i class="fa-solid fa-earth-americas fa-sm"></i> English(UK)
+                </p>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li class="language_choose"><a href="#">English(US)</a></li>
+                    <li class="language_choose"><a href="#">Español</a></li>
+                    <li class="language_choose"><a href="#">Português</a></li>
+                    <li class="language_choose"><a href="#">中文 (简体)</a></li>
+                    <li class="language_choose"><a href="#">正體中文 (繁體)</a></li>
+                    <li class="language_choose"><a href="#">Dansk</a></li>
+                    <li class="language_choose"><a href="#">Deutsch</a></li>
+                    <li class="language_choose"><a href="#">Français</a></li>
+                    <li class="language_choose"><a href="#">Italiano</a></li>
+                    <li class="language_choose"><a href="#">Nederlands</a></li>
+                    <li class="language_choose"><a href="#">Norsk</a></li>
+                    <li class="language_choose"><a href="#">Polski</a></li>
+                    <li class="language_choose"><a href="#">Русский</a></li>
+                    <li class="language_choose"><a href="#">Türkçe</a></li>
+                    <li class="language_choose"><a href="#">Tiếng Việt</a></li>
+                    <li class="language_choose"><a href="#">Svenska</a></li>
+                    <li class="language_choose"><a href="#">Українська</a></li>
+                    <li class="language_choose"><a href="#">日本語</a></li>
+                    <li class="language_choose"><a href="#">한국어</a></li>
+                    <li class="language_choose"><a href="#">ગુજરાતી</a></li>
+                    <li class="language_choose"><a href="#">தமிழ்</a></li>
+                    <li class="language_choose"><a href="#">తెలుగు</a></li>
+                    <li class="language_choose"><a href="#">বাঙ্গালি</a></li>
+                    <li class="language_choose"><a href="#">मराठी</a></li>
+                    <li class="language_choose"><a href="#">हिंदी</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main translator layout -->
+    <main class="translate-container">
+        <section class="translate-sidebar">
+            <h2 class="translate-sidebar-title">Search for</h2>
+            <ol class="translate-sidebar-list">
+                <li><a href="#">IELTS TEST ONLINE</a></li>
+                <li><a href="#">LEARN VOCABULARY WORDS</a></li>
+                <li><a href="#">FREE DOCUMENT TRANSLATION</a></li>
+                <li><a href="#">TEST MY ENGLISH LEVEL</a></li>
+                <li><a href="#">LEARN ENGLISH VOCABULARY</a></li>
+                <li><a href="#">TEST YOUR ENGLISH LEVEL</a></li>
+                <li><a href="#">VOCABULARY FOR IELTS</a></li>
+            </ol>
+        </section>
+
+        <section class="translate-main">
+            <div class="translate-heading">
+                <h1>Translator</h1>
+                <p class="translate-tagline">Get a quick, free translation!</p>
+                <p class="translate-note">
+                    Type your text and click <strong>Translate</strong> to see the translation, and to get links to
+                    dictionary entries for the words in your text.
+                </p>
+            </div>
+
+            <div class="translate-language-row">
+                <button id="from-lang-btn" class="translate-lang-btn" data-lang="en">
+                    <span class="translate-lang-label">English</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <button id="swap-lang-btn" class="translate-swap-btn" aria-label="Swap languages">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+                <button id="to-lang-btn" class="translate-lang-btn" data-lang="es">
+                    <span class="translate-lang-label">Spanish</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </div>
+
+            <div class="translate-panels">
+                <div class="translate-panel">
+                    <textarea id="translate-input" class="translate-textarea" placeholder="Enter text here" maxlength="250"></textarea>
+                    <div class="translate-panel-footer">
+                        <div class="translate-panel-left">
+                            <i class="fa-regular fa-keyboard"></i>
+                            <span id="char-count">0 / 250</span>
+                        </div>
+                        <button id="translate-btn" class="translate-submit-btn">Translate</button>
+                    </div>
+                </div>
+
+                <div class="translate-panel">
+                    <div id="translate-output" class="translate-output" aria-live="polite"></div>
+                    <div class="translate-panel-footer translate-panel-footer-right">
+                        <button id="copy-btn" class="translate-copy-btn">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/translate.js"></script>
+</body>
+
+</html>
+
+<!-- https://dictionary.cambridge.org/translate/ -->
  <!-- Trọng Hiểu  -->
