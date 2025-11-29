@@ -1,30 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/test/test2/main2.css">
-    <title>Document</title>
-<style>.parent {
-  display: inline-block; /* Cha co ngang theo con */
-  border: 2px solid red;
-}
+    <title>Browse Dictionary</title>
+    <style>
+        /* Thiết lập cơ bản */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff; /* Màu nền nhạt cho trang */
+        }
 
-.child {
-  width: 200px;
-  height:400px;
-  background: rgb(44, 57, 62);
-  padding: 10px;
-}
-</style> 
+        /* Container chính với màu xanh đậm */
+        .dictionary-browse-container {
+            background-color: #1a2342; /* Màu xanh Navy đậm */
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 5px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Tiêu đề */
+        .dictionary-browse-container h2 {
+            font-size: 1.6em;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+
+        /* Container cho các nút chữ cái, sử dụng Flexbox */
+        .alphabet-grid {
+            display: flex; /* Kích hoạt Flexbox */
+            flex-wrap: wrap; /* Cho phép các mục tự động xuống dòng */
+            gap: 10px; /* Khoảng cách giữa các nút */
+            margin-bottom: 30px;
+        }
+
+        /* Định dạng chung cho các nút chữ cái (thẻ a) */
+        .alphabet-grid a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px; /* Chiều rộng cố định */
+            height: 40px; /* Chiều cao cố định */
+            border-radius: 5px; /* Góc bo tròn */
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background-color 0.2s, color 0.2s;
+            cursor: pointer;
+        }
+
+        /* Nút chữ cái (Mặc định) */
+        .alphabet-grid a:not(.active) {
+            background-color: #3b456b; /* Màu nền nút chưa chọn */
+        }
+
+        /* Nút chữ cái đang hoạt động/chọn (Ví dụ: 0-9) */
+        .alphabet-grid a.active {
+            background-color: #f8f8f8; /* Màu nền nút hoạt động/chọn */
+            color: #1a2342; /* Màu chữ đậm */
+            font-weight: bold;
+        }
+        
+        /* Hiệu ứng di chuột qua */
+        .alphabet-grid a:hover {
+            background-color: #5a668a; /* Màu nền sáng hơn khi hover */
+        }
+
+        /* Vùng dưới, liên kết index */
+        .index-link-area {
+            font-size: 1.1em;
+        }
+
+        .index-link-area a {
+            color: #a0c2e9; /* Màu xanh nhạt cho liên kết */
+            text-decoration: none;
+            border-bottom: 1px solid #a0c2e9;
+        }
+
+        .index-link-area a:hover {
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+        
+        /* Box nổi "Browse words starting with 'Z'" */
+        .floating-box {
+            background-color: #ffffff; /* Nền trắng */
+            color: #1a2342; /* Chữ đậm */
+            padding: 8px 15px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 20px; /* Đặt gần chữ 'z' */
+            /* Để chính xác hơn cần dùng position: absolute, nhưng flexbox sẽ đơn giản hơn */
+        }
+    </style>
 </head>
-
 <body>
-    <div class="parent">
-        <div class="child">Đây là nội dung con rộng 200px</div>
+
+    <div class="dictionary-browse-container">
+        <h2>Browse the English Dictionary</h2>
+
+        <div class="alphabet-grid">
+            <a href="#" class="active">0–9</a>
+            <a href="#">a</a>
+            <a href="#">b</a>
+            <a href="#">c</a>
+            <a href="#">d</a>
+            <a href="#">e</a>
+            <a href="#">f</a>
+            <a href="#">g</a>
+            <a href="#">h</a>
+            <a href="#">i</a>
+            <a href="#">j</a>
+            <a href="#">k</a>
+            <a href="#">l</a>
+            <a href="#">m</a>
+            <a href="#">n</a>
+            <a href="#">o</a>
+            <a href="#">p</a>
+
+            <a href="#">q</a>
+            <a href="#">r</a>
+            <a href="#">s</a>
+            <a href="#">t</a>
+            <a href="#">u</a>
+            <a href="#">v</a>
+            <a href="#">w</a>
+            <a href="#">x</a>
+            <a href="#">y</a>
+            <a href="#">z</a>
+        </div>
+
+        <div class="index-link-area">
+            Or, browse the Cambridge Dictionary <a href="#">index</a>
+        </div>
     </div>
 
 </body>
-
 </html>

@@ -532,62 +532,65 @@ a:active {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
+
 }
 
-.information-word2025{
-    width:50%;
-    height:auto;
-    padding:20px;
+.information-word2025 {
+    width: 50%;
+    height: auto;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.learn-more{
+.learn-more {
     cursor: pointer;
     background-color: #fdc702;
-    border: none; 
-    padding:7px 20px; 
-    border-radius: 25px; 
+    border: none;
+    padding: 7px 20px;
+    border-radius: 25px;
     font-size: 16px;
     font-weight: 700;
     transition: 0.1s;
 }
-.learn-more:hover{
+
+.learn-more:hover {
     opacity: 0.8;
 }
 
-.blog{
-    width:50%;
-    padding:20px;
+.blog {
+    width: 50%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.a_underline:hover{
+.a_underline:hover {
     text-decoration: underline;
 }
 
-.read-more{
+.read-more {
     cursor: pointer;
     background-color: #1d2a57;
-    color:#ddfaff;
-    border: none; 
-    padding:7px 20px; 
-    border-radius: 25px; 
+    color: #fff;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 25px;
     font-size: 16px;
     font-weight: 700;
     transition: 0.1s;
 }
-.read-more:hover{
+
+.read-more:hover {
     opacity: 0.8;
 }
-.make-opacity:hover{
+
+.make-opacity:hover {
     opacity: 0.9;
 }
 
-.pronounce-the-word{
-    width:50%;
+.pronounce-the-word {
+    width: 50%;
     background-color: #fdc702;
     display: flex;
     flex-direction: column;
@@ -776,4 +779,133 @@ a:active {
 
 .translate-copy-btn:hover {
     background-color: #f5f5f5;
+}
+
+.pronounce-the-word-right {
+    width: 50%;
+    padding: 20px;
+}
+
+.img-new-word {
+    width: 50%;
+    height: 100%;
+    background-image: url("/imgage/fambushing-newWord.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.list-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+}
+
+.search-list {
+    padding: 0;
+    list-style: none;
+    width: 50%;
+}
+
+.search-list li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.search-list li a {
+    text-decoration: underline;
+    color: #1d2a57;
+    font-weight: bold;
+}
+
+.search-list li a:hover {
+    text-decoration: none;
+}
+
+.item-number {
+    font-weight: normal;
+    color: #1d2a57;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.alphabet-grid {
+    display: flex;
+    /* Kích hoạt Flexbox */
+    flex-wrap: wrap;
+    /* Cho phép các mục tự động xuống dòng */
+    gap: 10px;
+    /* Khoảng cách giữa các nút */
+    margin-bottom: 15px;
+}
+
+/* Định dạng chung cho các nút chữ cái (thẻ a) */
+.alphabet-grid a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    /* Chiều rộng cố định */
+    height: 32px;
+    padding: 5px 15px;
+    /* Chiều cao cố định */
+    border-radius: 20px;
+    /* Góc bo tròn */
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 19px;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+/* Nút chữ cái (Mặc định) */
+.alphabet-grid a {
+    background-color: #616a89;
+    /* Màu nền nút chưa chọn */
+}
+
+/* Nút chữ cái đang hoạt động/chọn (Ví dụ: 0-9) */
+/* .alphabet-grid a.active {
+    background-color: #f8f8f8;
+    /* Màu nền nút hoạt động/chọn */
+    /* color: #1a2342; */
+    /* Màu chữ đậm */
+    /* font-weight: bold; */
+/* } */ 
+
+/* Hiệu ứng di chuột qua */
+.alphabet-grid a:hover {
+    opacity: 0.8;
+    /* background-color: #5a668a; */
+    /* Màu nền sáng hơn khi hover */
+}
+
+/* Vùng dưới, liên kết index */
+.index-link-area {
+    font-size: 1.1em;
+}
+
+.index-link-area a {
+    /* color: #a0c2e9; */
+    /* Màu xanh nhạt cho liên kết */
+    text-decoration: underline;
+    /* border-bottom: 1px solid #a0c2e9; */
+}
+
+.index-link-area a:hover {
+    text-decoration: none;
+    /* color: #ffffff;
+    border-bottom: 1px solid #ffffff; */
 }

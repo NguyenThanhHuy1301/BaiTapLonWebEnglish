@@ -9,7 +9,7 @@ function toggleScrollLock(checkboxId) {
     // Kiểm tra nếu phần tử checkbox tồn tại trước khi thêm sự kiện
     if (checkbox) {
         // Lắng nghe sự kiện "change" trên checkbox
-        checkbox.addEventListener('change', function() {
+        checkbox.addEventListener('change', function () {
             // Dựa vào trạng thái checked của checkbox để thêm hoặc xóa class
             if (this.checked) {
                 body.classList.add('no-scroll');
@@ -26,14 +26,14 @@ toggleScrollLock('menu-button');     // Xử lý Menu Hamburger
 
 // Khắc phục lỗi khóa cuộn khi tải lại trang
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const languageCheckbox = document.getElementById('language-button');
     const menuCheckbox = document.getElementById('menu-button');
     const body = document.body;
-    
+
     // Đảm bảo rằng body không có class 'no-scroll' khi trang load lần đầu
     // và các checkbox không bị lưu trạng thái 'checked' từ phiên trước.
-    
+
     if (languageCheckbox) {
         languageCheckbox.checked = false;
     }
@@ -44,3 +44,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Luôn đảm bảo xóa class khóa cuộn khi trang vừa tải xong
     body.classList.remove('no-scroll');
 });
+
+const btn1 = document.getElementById('btnPlay');
+const btn2 = document.getElementById('btnPlay2');
+
+const audio1 = document.getElementById('myAudio');
+const audio2 = document.getElementById('myAudio2');
+
+btn1.addEventListener('click', () => {
+    audio1.currentTime = 0; // phát lại từ đầu
+    audio1.play();
+});
+
+btn2.addEventListener('click', () => {
+    audio2.currentTime = 0;
+    audio2.play();
+});
+
