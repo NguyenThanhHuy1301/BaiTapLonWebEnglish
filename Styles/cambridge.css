@@ -1,0 +1,477 @@
+/* ===========================
+   Cambridge +Plus page layout
+   =========================== */
+
+/* ===========================
+   Vocabulary page layout
+   (used by Cambridge/vocabulary.html)
+   =========================== */
+
+.vocab-main {
+    max-width: 1420px;
+    margin: 45px auto 80px;
+    padding: 0 20px 40px;
+    box-sizing: border-box;
+}
+
+.vocab-header {
+    margin-top: 30px;
+}
+
+.vocab-title {
+    font-size: 32px;
+    font-weight: 400;
+    color: #1d2a57;
+    margin-bottom: 8px;
+}
+
+.vocab-subtitle {
+    font-size: 16px;
+    color: #626a8a;
+}
+
+.vocab-controls {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.vocab-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid #d8d8d8;
+    background-color: #ffffff;
+    min-width: 260px;
+}
+
+.vocab-search-input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    flex: 1;
+}
+
+.vocab-filter {
+    font-size: 14px;
+    color: #1d2a57;
+}
+
+.vocab-filter-select {
+    margin-left: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #d8d8d8;
+}
+
+.vocab-list-section {
+    margin-top: 30px;
+}
+
+.vocab-list-wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 20px 24px 24px;
+}
+
+.vocab-letter-heading {
+    font-size: 22px;
+    color: #1d2a57;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.vocab-list {
+    columns: 3;
+    column-gap: 40px;
+    list-style: decimal;
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+.vocab-list li {
+    font-size: 14px;
+    color: #1d2a57;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+    .vocab-list {
+        columns: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .vocab-main {
+        margin: 20px auto 60px;
+    }
+
+    .vocab-list {
+        columns: 1;
+    }
+}
+
+.cambridge-main {
+    max-width: 1420px;
+    margin: 45px auto 80px;
+    padding: 0 20px 40px;
+    box-sizing: border-box;
+}
+
+.cambridge-section {
+    margin-top: 40px;
+}
+
+.cambridge-content-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.cambridge-two-column {
+    align-items: flex-start;
+}
+
+.cambridge-section-title {
+    font-size: 28px;
+    font-weight: 400;
+    color: #1d2a57;
+    margin-bottom: 10px;
+}
+
+.cambridge-section-body {
+    font-size: 16px;
+    color: #1d2a57;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.cambridge-btn {
+    border-radius: 999px;
+    border: none;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cambridge-btn-primary {
+    background-color: #fdc702;
+    color: #1d2a57;
+}
+
+.cambridge-btn-secondary {
+    background-color: #5ce8ff;
+    color: #1d2a57;
+}
+
+.cambridge-btn-dark {
+    background-color: #1d2a57;
+    color: #ffffff;
+}
+
+/* Hero banner (vùng vàng) */
+
+.cambridge-hero {
+    background-color: #ffd200;
+    border-radius: 0 0 24px 24px;
+    padding: 36px 40px 40px;
+}
+
+.cambridge-hero-inner {
+    max-width: 1420px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.cambridge-hero-title-block {
+    display: inline-block;
+}
+
+.cambridge-hero-logo-top {
+    display: inline-block;
+    background-color: #082663;
+    color: #ffffff;
+    padding: 10px 22px;
+    font-size: 32px;
+    font-weight: 800;
+    border-radius: 6px 6px 0 0;
+}
+
+.cambridge-hero-logo-bottom {
+    display: inline-block;
+    background-color: #fdc702;
+    color: #082663;
+    padding: 12px 22px;
+    font-size: 30px;
+    font-weight: 800;
+    border-radius: 0 0 6px 6px;
+}
+
+.cambridge-hero-signup {
+    max-width: 360px;
+    background-color: #082663;
+    color: #ffffff;
+    padding: 24px 26px 26px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cambridge-hero-signup-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.cambridge-hero-signup-text {
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.cambridge-hero-signup-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Word of the Year */
+
+.cambridge-word-of-year .cambridge-content-wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+}
+
+.cambridge-wof-image {
+    flex: 0 0 340px;
+    height: 220px;
+    background-image: linear-gradient(135deg, #2ec4b6, #0b7285);
+    border-radius: 10px;
+}
+
+.cambridge-wof-text {
+    flex: 1;
+    padding: 10px 10px 10px 24px;
+}
+
+/* Word lists + video widget */
+
+.cambridge-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.cambridge-card-large {
+    flex: 1;
+    display: flex;
+}
+
+.cambridge-card-image {
+    flex: 0 0 260px;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cambridge-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cambridge-card-image-wordlists {
+    background-image: linear-gradient(135deg, #ffd54f, #ffb300);
+}
+
+.cambridge-card-image-wordlists img {
+    object-fit: cover;
+    padding: 0;
+}
+
+.cambridge-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cambridge-side-widget {
+    flex: 0 0 340px;
+}
+
+.cambridge-video-thumbnail {
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, #ffd54f, #ffb300);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.cambridge-side-widget-caption {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #1d2a57;
+}
+
+/* Quizzes section */
+
+.cambridge-quizzes-main {
+    flex: 1;
+}
+
+.cambridge-quiz-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.cambridge-card-image-grammar {
+    background-image: linear-gradient(135deg, #ff4b7d, #f72585);
+}
+
+.cambridge-card-image-grammar img {
+    object-fit: cover;
+    padding: 0;
+}
+
+.cambridge-card-image-imagequiz {
+    background-image: linear-gradient(135deg, #ffb703, #fb8500);
+}
+
+.cambridge-card-image-imagequiz img {
+    object-fit: cover;
+    padding: 0;
+}
+
+.cambridge-quiz-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cambridge-quiz-title {
+    font-size: 22px;
+    color: #1d2a57;
+    margin-bottom: 8px;
+}
+
+.cambridge-side-widget-word {
+    flex: 0 0 320px;
+}
+
+.cambridge-word-of-day {
+    background-color: #ffd200;
+    border-radius: 10px;
+    padding: 20px 20px 22px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.cambridge-word-of-day-label {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #082663;
+    margin-bottom: 10px;
+}
+
+.cambridge-word-of-day-term {
+    font-size: 26px;
+    font-weight: 700;
+    color: #082663;
+    margin-bottom: 8px;
+}
+
+.cambridge-word-of-day-note {
+    font-size: 15px;
+    color: #082663;
+    margin-bottom: 14px;
+}
+
+/* Bottom ads */
+
+.cambridge-ads-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cambridge-ad-banner {
+    border-radius: 10px;
+    padding: 20px 22px;
+    background: linear-gradient(120deg, #219ebc, #023047);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+
+.cambridge-ad-banner--blue {
+    background: linear-gradient(120deg, #3a0ca3, #4361ee);
+}
+
+.cambridge-ad-banner--pink {
+    background: linear-gradient(120deg, #f72585, #b5179e);
+}
+
+.cambridge-ad-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.18);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.cambridge-ad-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.cambridge-ad-text {
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .cambridge-main {
+        margin: 20px auto 60px;
+    }
+
+    .cambridge-hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cambridge-content-wrapper {
+        flex-direction: column;
+    }
+
+    .cambridge-side-widget,
+    .cambridge-side-widget-word {
+        flex: 1;
+    }
+
+    .cambridge-ads-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+

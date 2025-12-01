@@ -1,5 +1,4 @@
-<!-- https://dictionary.cambridge.org/plus/ -->
-<!-- Nguyễn Phạm Đình Mẫn  -->
+<!-- Vocabulary list page - 3000 common English words -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Cambridge Dictionary +Plus</title>
+    <title>Cambridge Dictionary +Plus | 3000 common English words</title>
     <link rel="icon" type="image/png" class="logo" href="../imgage/logo2.png">
 </head>
 
@@ -65,7 +64,7 @@
         <!-- Search Bar Section -->
         <div class="search-section">
             <div class="search-bar">
-                <input type="search" class="search-input" placeholder="Search English">
+                <input type="search" class="search-input" placeholder="Search in 3000-word list">
                 <div class="language-select">
                     English
                     <span class="menu-dots">⋮</span>
@@ -159,118 +158,87 @@
         </div>
     </div>
 
-    <!-- Main Cambridge +Plus layout -->
-    <main class="cambridge-main">
-        <!-- Banner vàng (hero) -->
-        <section class="cambridge-hero">
-            <div class="cambridge-hero-inner">
-                <div class="cambridge-hero-title-block">
-                    <div class="cambridge-hero-logo-top">Cambridge</div>
-                    <div class="cambridge-hero-logo-bottom">Dictionary +Plus</div>
-                </div>
+    <!-- Main vocabulary layout -->
+    <main class="vocab-main">
+        <section class="vocab-header">
+            <h1 class="vocab-title">3000 most common English words</h1>
+            <p class="vocab-subtitle">
+                Browse the essential 3000-word list used in Cambridge Dictionary and build a strong vocabulary
+                foundation.
+            </p>
+        </section>
 
-                <aside class="cambridge-hero-signup">
-                    <h2 class="cambridge-hero-signup-title">Sign up now</h2>
-                    <p class="cambridge-hero-signup-text">
-                        Free word lists and quizzes to create, download and share.
-                    </p>
-                    <div class="cambridge-hero-signup-actions">
-                        <button class="cambridge-btn cambridge-btn-primary">Sign up</button>
-                        <span>or</span>
-                        <button class="cambridge-btn cambridge-btn-secondary">Log in</button>
-                    </div>
-                </aside>
+        <section class="vocab-controls">
+            <div class="vocab-search">
+                <input type="text" class="vocab-search-input" placeholder="Filter words... (e.g. ability)">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="vocab-filter">
+                <label for="vocab-filter-select">Jump to letter:</label>
+                <select id="vocab-filter-select" class="vocab-filter-select">
+                    <option value="all">All</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
+                    <option value="K">K</option>
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="N">N</option>
+                    <option value="O">O</option>
+                    <option value="P">P</option>
+                    <option value="Q">Q</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                    <option value="T">T</option>
+                    <option value="U">U</option>
+                    <option value="V">V</option>
+                    <option value="W">W</option>
+                    <option value="X">X</option>
+                    <option value="Y">Y</option>
+                    <option value="Z">Z</option>
+                </select>
             </div>
         </section>
 
-        <!-- Word lists + Quizzes -->
-        <section class="cambridge-section cambridge-wordlists">
-            <div class="cambridge-content-wrapper cambridge-two-column">
-                <div class="cambridge-card cambridge-card-large">
-                    <div class="cambridge-card-image cambridge-card-image-wordlists">
-                        <img src="../imgage/3000-tu-vung-tieng-anh-thong-dung.jpg" alt="3000 English Words Banner">
-                    </div>
-                    <div class="cambridge-card-body">
-                        <h2 class="cambridge-section-title">Word lists</h2>
-                        <p class="cambridge-section-body">
-                            Try Cambridge word lists and quizzes to grow your vocabulary.
-                        </p>
-                        <button class="cambridge-btn cambridge-btn-primary" onclick="window.location.href='vocabulary.html'">Go to word lists</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section class="vocab-list-section">
+            <div class="vocab-list-wrapper">
+                <!-- Example items – bạn thay / bổ sung đủ 3000 từ tại đây -->
+                <h2 class="vocab-letter-heading" id="letter-A">A</h2>
+                <ol class="vocab-list">
+                    <li>ability</li>
+                    <li>able</li>
+                    <li>about</li>
+                    <li>above</li>
+                    <li>accept</li>
+                    <li>accident</li>
+                    <li>according to</li>
+                    <li>account</li>
+                    <li>across</li>
+                    <li>act</li>
+                </ol>
 
-        <section class="cambridge-section cambridge-quizzes">
-            <div class="cambridge-content-wrapper cambridge-two-column">
-                <div class="cambridge-quizzes-main">
-                    <h2 class="cambridge-section-title">Quizzes</h2>
-                    <p class="cambridge-section-body">
-                        Build your skills with quizzes that are just right for your level of English. From easy to
-                        challenging – the choice is yours.
-                    </p>
+                <h2 class="vocab-letter-heading" id="letter-B">B</h2>
+                <ol class="vocab-list">
+                    <li>back</li>
+                    <li>bad</li>
+                    <li>bag</li>
+                    <li>ball</li>
+                    <li>bank</li>
+                    <li>base</li>
+                    <li>basic</li>
+                    <li>basis</li>
+                    <li>be</li>
+                    <li>beautiful</li>
+                </ol>
 
-                    <div class="cambridge-quiz-row">
-                        <div class="cambridge-card-image cambridge-card-image-grammar">
-                            <img src="../imgage/12-thi-tieng-anh-co-ban.webp" alt="12 English Tenses Diagram">
-                        </div>
-                        <div class="cambridge-quiz-text">
-                            <h3 class="cambridge-quiz-title">Grammar quizzes</h3>
-                            <p class="cambridge-section-body">
-                                How good is your grammar? Try our quick, free grammar quizzes.
-                            </p>
-                            <button class="cambridge-btn cambridge-btn-primary">Go to grammar quizzes</button>
-                        </div>
-                    </div>
-
-                    <div class="cambridge-quiz-row">
-                        <div class="cambridge-card-image cambridge-card-image-imagequiz">
-                            <img src="../imgage/cau-do-vui-thumbnail.jpg" alt="Image Quizzes Illustration">
-                        </div>
-                        <div class="cambridge-quiz-text">
-                            <h3 class="cambridge-quiz-title">Image quizzes</h3>
-                            <p class="cambridge-section-body">
-                                Test your vocabulary with our fun image quizzes. Can you match the word to the image?
-                            </p>
-                            <button class="cambridge-btn cambridge-btn-primary">Go to image quizzes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Banner quảng cáo phía dưới -->
-        <section class="cambridge-section cambridge-bottom-ads">
-            <div class="cambridge-content-wrapper cambridge-ads-grid">
-                <article class="cambridge-ad-banner">
-                    <div>
-                        <div class="cambridge-ad-badge">Ad</div>
-                        <h3 class="cambridge-ad-title">Prepare for IELTS with +Plus</h3>
-                        <p class="cambridge-ad-text">
-                            Track your progress with personalized word lists and practice quizzes.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="cambridge-ad-banner cambridge-ad-banner--blue">
-                    <div>
-                        <div class="cambridge-ad-badge">Ad</div>
-                        <h3 class="cambridge-ad-title">Games for learning vocabulary</h3>
-                        <p class="cambridge-ad-text">
-                            Play fun games that help you remember new words for longer.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="cambridge-ad-banner cambridge-ad-banner--pink">
-                    <div>
-                        <div class="cambridge-ad-badge">Ad</div>
-                        <h3 class="cambridge-ad-title">Classroom tools for teachers</h3>
-                        <p class="cambridge-ad-text">
-                            Create and share word lists and quizzes with your students.
-                        </p>
-                    </div>
-                </article>
+                <!-- TODO: thêm các letter C, D, ... Z và lấp đầy tới 3000 từ -->
             </div>
         </section>
     </main>
@@ -345,7 +313,10 @@
     </footer>
 
     <script src="../javascript/main.js"></script>
+    <!-- Vocabulary behaviour is implemented inside cambridge.js -->
     <script src="../javascript/cambridge.js"></script>
 </body>
 
 </html>
+
+
