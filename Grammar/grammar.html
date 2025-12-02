@@ -1,2 +1,468 @@
-<!-- https://dictionary.cambridge.org/grammar/british-grammar/ -->
- <!-- Huỳnh Vũ Huy Khang -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge Dictionary - Grammar</title>
+    <style>
+        :root {
+            --primary: #00a0a6;
+            --primary-dark: #007a7f;
+            --accent: #ffcc29;
+            --text-dark: #0f1d3b;
+            --text-light: #4c5b7a;
+            --bg-light: #f5fbff;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        nav a.active {
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 4px;
+        }
+
+        .cta-auth {
+            display: flex;
+            gap: 12px;
+        }
+
+        .cta-auth button {
+            border: none;
+            background: #ffffff;
+            color: var(--primary-dark);
+            padding: 6px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #00b5c5, #007a7f);
+            color: #ffffff;
+            padding: 48px 24px 80px;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            gap: 32px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            font-size: 1.05rem;
+        }
+
+        .search-bar {
+            background: #ffffff;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            margin-top: 24px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 14px 18px;
+            border-radius: 999px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            border: none;
+            background: var(--accent);
+            color: #2c2c2c;
+            font-weight: 700;
+            padding: 14px 30px;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filters button {
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-radius: 999px;
+            padding: 6px 16px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: -60px auto 80px;
+            padding: 0 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 32px;
+        }
+
+        .card h2 {
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .topics-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .topics-list li {
+            list-style: none;
+            padding: 14px 18px;
+            border: 1px solid #e4e9f1;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .alphabet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .alphabet span {
+            width: 36px;
+            height: 36px;
+            background: #1b2c5b;
+            color: #ffffff;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            font-weight: 600;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .feature {
+            border: 1px solid #e1e6f0;
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .ack-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .ack-list ul {
+            list-style: none;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .blog-card,
+        .word-day-card {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            border: 1px solid #e4e9f1;
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .blog-card img {
+            width: 160px;
+            border-radius: 14px;
+            object-fit: cover;
+            height: 120px;
+        }
+
+        .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            border-radius: 999px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #0f1d3b;
+            color: #ffffff;
+            text-align: center;
+            padding: 32px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .blog-card,
+            .word-day-card {
+                flex-direction: column;
+            }
+
+            .hero {
+                padding-bottom: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Cambridge Dictionary</div>
+        <nav>
+            <ul>
+                <li><a href="#">Dictionary</a></li>
+                <li><a href="#">Translate</a></li>
+                <li><a href="#" class="active">Grammar</a></li>
+                <li><a href="#">Thesaurus</a></li>
+                <li><a href="#">+Plus</a></li>
+                <li><a href="#">Games</a></li>
+            </ul>
+        </nav>
+        <div class="cta-auth">
+            <button>Log in</button>
+            <button>Sign up</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <span class="badge">Grammar</span>
+                <h1>Explore the English Grammar</h1>
+                <p>Get clear grammar explanations with hundreds of examples on how grammar is used in natural written and
+                    spoken English.</p>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search Grammar">
+                <div class="filters">
+                    <button>English</button>
+                    <button>English–French</button>
+                    <button>French–English</button>
+                </div>
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <article class="card">
+            <h2>Browse by topic</h2>
+            <ul class="topics-list">
+                <li>Adjectives and adverbs</li>
+                <li>Easily confused words</li>
+                <li>Nouns, pronouns and determiners</li>
+                <li>Prepositions and particles</li>
+                <li>Using English</li>
+                <li>Verbs</li>
+                <li>Words, sentences and clauses</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>Browse the English Grammar</h2>
+            <div class="alphabet">
+                <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>y</span>
+            </div>
+            <p style="text-align:center;margin-top:20px;">Or, browse the Cambridge Dictionary index</p>
+        </article>
+
+        <article class="card">
+            <h2>Key features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 3h6v18H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8 0h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6z" />
+                    </svg>
+                    <p>Over 500 topics with clear and simple explanations.</p>
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 17h10v2H7zM5 5h14v10H5z" />
+                    </svg>
+                    <p>Thousands of real-life examples show how grammar is used.</p>
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2a9 9 0 1 1 0 18 9 9 0 0 1 0-18zm0 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10z" />
+                    </svg>
+                    <p>Based on the Cambridge English Corpus — a database of over 2 billion words.</p>
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+                    </svg>
+                    <p>Useful information on spelling, punctuation and word formation.</p>
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 3h4v18h-4z" />
+                    </svg>
+                    <p>Important advice on how to use English in conversation.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <h2>Acknowledgements</h2>
+            <p>English Grammar Today: An A–Z of Spoken and Written Grammar © 2016 Cambridge University Press</p>
+            <div class="ack-list" style="margin-top:16px;">
+                <ul>
+                    <li>Ronald Carter</li>
+                    <li>Michael McCarthy</li>
+                    <li>Geraldine Mark</li>
+                    <li>Anne O’Keeffe</li>
+                </ul>
+                <ul>
+                    <li>Jessica Rundell</li>
+                    <li>Helen Freeman</li>
+                    <li>Wendolyn Nichols</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="card">
+            <h2>From the blog</h2>
+            <div class="blog-card">
+                <img src="https://images.pexels.com/photos/1473947/pexels-photo-1473947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    alt="Good and bad choice">
+                <div>
+                    <p style="font-size:0.85rem;color:var(--text-light);">November 26, 2025</p>
+                    <h3>Worthy and wicked (Words meaning ‘good’ and ‘bad’)</h3>
+                    <p style="margin:10px 0;">Discover new ways to talk about positive and negative behaviour with our
+                        latest vocabulary blog post.</p>
+                    <a href="#" class="cta-link">Read more</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card">
+            <h2>Word of the day</h2>
+            <div class="word-day-card">
+                <div style="flex:1;">
+                    <p style="font-size:0.9rem;color:var(--text-light);">WORD OF THE DAY</p>
+                    <h3 style="font-size:2.4rem;margin:12px 0;">vacuum</h3>
+                    <p>/ˈvæk.juːm/ — to use a vacuum cleaner to collect dust, dirt, etc.</p>
+                    <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
+                        <button class="cta-link" style="background:#ffcc29;color:#0f1d3b;">About this</button>
+                    </div>
+                </div>
+                <div style="flex:1;">
+                    <p style="font-size:0.9rem;color:var(--text-light);">NEW WORDS</p>
+                    <h3 style="font-size:2rem;margin:12px 0;">throning</h3>
+                    <p>December 01, 2025 — the trend of sharing glamorous photos from private jets.</p>
+                    <a href="#" class="cta-link">More new words</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        © 2025 Cambridge University Press | Privacy | Terms | Cookie Policy
+    </footer>
+</body>
+
+</html>
+
