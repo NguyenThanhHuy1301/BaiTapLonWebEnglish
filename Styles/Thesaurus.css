@@ -1,0 +1,177 @@
+.content-thesaurus {
+    width: 100%;
+}
+
+.thesaurus-overview {
+    width: 100%;
+    background-color: #def4ff;
+    border-radius: 18px;
+    padding: 40px 50px;
+    margin-bottom: 30px;
+}
+
+.overview-header h1 {
+    font-size: 32px;
+    color: #1d2a57;
+    margin-bottom: 15px;
+}
+
+.overview-header p {
+    font-size: 18px;
+    color: #1d2a57;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.popular-articles-card h2 {
+    font-size: 22px;
+    color: #1d2a57;
+    margin-bottom: 20px;
+}
+
+.popular-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.popular-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 260px;
+}
+
+.popular-list li {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    align-items: center;
+    color: #1d2a57;
+}
+
+.popular-list a {
+    text-decoration: underline;
+    color: #1d2a57;
+    font-weight: 600;
+}
+
+.popular-list a:hover {
+    text-decoration: none;
+}
+
+.thesaurus-browse {
+    width: 100%;
+    background-color: #1a2b66;
+    color: #ffffff;
+    padding: 35px 50px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+}
+
+.thesaurus-browse h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.thesaurus-browse .alphabet-grid {
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.thesaurus-browse .alphabet-grid a {
+    background-color: #ffffff;
+    color: #1d2a57;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    font-size: 16px;
+}
+
+.thesaurus-browse .alphabet-grid a.active {
+    background-color: #1d2a57;
+    color: #ffffff;
+}
+
+.thesaurus-browse .index-link-area {
+    color: #ffffff;
+}
+
+.thesaurus-browse .index-link-area a {
+    color: #5ce8ff;
+}
+
+.thesaurus-key-features {
+    background: #ffffff;
+    padding: 35px 25px 30px;
+    color: #1d2a57;
+}
+
+.thesaurus-key-features h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.thesaurus-key-features p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.thesaurus-key-features a {
+    color: #1d2a57;
+    text-decoration: underline;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.feature-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    background: #ffffff;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #1d2a57;
+}
+
+.feature-card i {
+    font-size: 28px;
+    color: #f39c12;
+}
+
+.thesaurus-acknowledgements {
+    padding: 25px 0 40px;
+    color: #1d2a57;
+    border-top: 1px solid #e0e6f0;
+}
+
+.thesaurus-acknowledgements h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.thesaurus-ack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.thesaurus-ack-grid h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.thesaurus-ack-grid p {
+    margin: 0;
+    font-size: 16px;
+}
+
