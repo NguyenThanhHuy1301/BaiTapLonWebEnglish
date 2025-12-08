@@ -1,17 +1,18 @@
-<!-- https://dictionary.cambridge.org/dictionary/ -->
-<!-- Bùi thế khiêm -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/main.css">
-    <link rel="stylesheet" href="../Styles/dictionary.css">
+    <link rel="stylesheet" href="../Styles/Writing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>UTC2 Dictionary | English Dictionary Translations & Thesaurus</title>
+    <title>UTC2 Writing Checker | Kiểm Tra Bài Viết Tiếng Anh</title>
     <link rel="icon" type="image/png" class="logo" href="../imgage/logo-utc.png">
 </head>
 
@@ -27,12 +28,11 @@
 
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></li>
+                    <li><a href="../Dictionnary/dictionnary.html">Dictionary</a></li>
                     <li><a href="../Translate/translate.html">Translate</a></li>
                     <li><a href="../Grammar/grammar.html">Grammar</a></li>
                     <li><a href="../Exercises/Exercises.html">Exercises</a></li>
-                    <li><a href="../Writing/Writing.html">Writing Checker</a></li>
-                
+                    <li><a href="Writing.html" class="active">Writing Checker</a></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -47,36 +47,17 @@
 
         <!-- Logo Section -->
         <div class="logo-section">
-            <div class="logo">
-                <a href="../index.html" class="logo-text-link">
-                    <span class="logo-text">UTC2 Dictionary</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Search Bar Section -->
-        <div class="search-section">
-            <div class="search-bar">
-                <input type="search" id="dictionary-search-input" class="search-input" placeholder="Nhập từ cần tra...">
-                <div class="language-select-wrapper">
-                    <select id="dictionary-lang-selector" class="dictionary-lang-select">
-                        <option value="en-vi">Anh - Việt</option>
-                        <option value="vi-en">Việt - Anh</option>
-                        <option value="en-en">Anh - Anh</option>
-                    </select>
+            <div class="logo-wrapper">
+                <div class="logo-image-wrapper">
+                    <img src="../imgage/logo-utc.png" alt="UTC Logo" class="logo-image">
                 </div>
-                <div id="dictionary-search-btn" class="dictionary-search-button">
-                    <i class="fa-solid fa-magnifying-glass fa-sm"></i>
-                    <span>Tra từ</span>
+                <div class="logo-content">
+                    <a href="../index.html" class="logo-text-link">
+                        <h1 class="logo-text">UTC2 Writing Checker</h1>
+                    </a>
+                    <p class="logo-subtitle">Kiểm tra lỗi ngữ pháp, chính tả và cải thiện bài viết tiếng Anh của bạn.</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Small Buttons Section -->
-        <div class="button-section dictionary-mode-tabs">
-            <button class="small-btn dict-mode-btn" data-mode="en-vi">ANH-VIỆT</button>
-            <button class="small-btn dict-mode-btn" data-mode="vi-en">VIỆT-ANH</button>
-            <button class="small-btn dict-mode-btn" data-mode="en-en">ANH-ANH</button>
         </div>
     </header>
 
@@ -90,11 +71,11 @@
                         class="fa-solid fa-x"></i></label>
             </div>
             <div class="menu__child"><a href="../index.html">Home</a></div>
-            <div class="menu__child"><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></div>
+            <div class="menu__child"><a href="../Dictionnary/dictionnary.html">Dictionary</a></div>
             <div class="menu__child"><a href="../Translate/translate.html">Translate</a></div>
             <div class="menu__child"><a href="../Grammar/grammar.html">Grammar</a></div>
             <div class="menu__child"><a href="../Exercises/Exercises.html">Exercises</a></div>
-            <div class="menu__child"><a href="../Writing/Writing.html">Writing Checker</a></div>
+            <div class="menu__child"><a href="Writing.html" class="active">Writing Checker</a></div>
             <div class="menu__child"><a href="../Game/game.html">Games</a></div>
             <div class="menu__child">
                 <div class="social-icons">
@@ -109,30 +90,82 @@
         <label class="menu-right" for="menu-button"></label>
     </div>
 
+    <!-- Main Content Section -->
+    <main class="writing-main-container">
+        <div class="writing-content-wrapper">
+            <!-- Left Column: Input & Actions -->
+            <div class="writing-input-column">
+                <div class="writing-card">
+                    <label for="writingInput" class="writing-label">Your Writing</label>
+                    <textarea id="writingInput" class="writing-textarea" 
+                              placeholder="Nhập đoạn văn tiếng Anh của bạn tại đây…"></textarea>
+                    <div class="writing-actions">
+                        <button id="checkBtn" class="writing-btn writing-btn-primary">
+                            <i class="fa-solid fa-spell-check"></i>
+                            Check Writing
+                        </button>
+                        <button id="clearBtn" class="writing-btn writing-btn-secondary">
+                            <i class="fa-solid fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Main Dictionary Content -->
-    <main class="dictionary-main">
-        <div class="dictionary-container">
-            <!-- Search Result Area -->
-            <div id="dictionary-result" class="dictionary-result">
-                <div class="dictionary-welcome">
-                    <h1>Khám phá UTC2 Dictionary</h1>
-                    <p>Từ điển Anh-Việt trực tuyến miễn phí, tra cứu nhanh chóng và chính xác. Hỗ trợ đa ngôn ngữ với hàng nghìn từ vựng và ví dụ minh họa.</p>
-                    
-                    <div class="dictionary-types">
-                        <div class="dictionary-type-card">
-                            <h2>Định nghĩa tiếng Anh</h2>
-                            <p>Từ điển được xây dựng dựa trên kho ngữ liệu phong phú, phù hợp cho người học tiếng Anh ở mọi trình độ. Lý tưởng cho việc chuẩn bị các kỳ thi tiếng Anh quốc tế.</p>
-                            <div class="dictionary-links">
-                                <a href="#" class="dictionary-link">Từ điển Anh-Việt</a>
-                                <a href="#" class="dictionary-link">Từ điển Việt-Anh</a>
-                                <a href="#" class="dictionary-link">Từ điển Anh-Anh</a>
-                                <a href="#" class="dictionary-link">Từ vựng chuyên ngành</a>
+            <!-- Right Column: Result / Analysis -->
+            <div class="writing-result-column">
+                <!-- Statistics Card -->
+                <div class="writing-card">
+                    <h3 class="writing-card-title">Statistics</h3>
+                    <div class="writing-statistics">
+                        <div class="writing-stat-item">
+                            <div class="writing-stat-icon">
+                                <i class="fa-solid fa-font"></i>
+                            </div>
+                            <div class="writing-stat-content">
+                                <div class="writing-stat-value" id="wordCount">0</div>
+                                <div class="writing-stat-label">Words</div>
+                            </div>
+                        </div>
+                        <div class="writing-stat-item">
+                            <div class="writing-stat-icon">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </div>
+                            <div class="writing-stat-content">
+                                <div class="writing-stat-value" id="sentenceCount">0</div>
+                                <div class="writing-stat-label">Sentences</div>
+                            </div>
+                        </div>
+                        <div class="writing-stat-item">
+                            <div class="writing-stat-icon">
+                                <i class="fa-solid fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="writing-stat-content">
+                                <div class="writing-stat-value" id="errorCount">0</div>
+                                <div class="writing-stat-label">Errors</div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Highlighted Text Card -->
+                <div class="writing-card">
+                    <h3 class="writing-card-title">Highlighted Text</h3>
+                    <div id="highlightedOutput" class="writing-output"></div>
+                </div>
+
+                <!-- Rewrite Card -->
+                <div class="writing-card">
+                    <h3 class="writing-card-title">Improved Version (Rewrite)</h3>
+                    <div id="rewriteOutput" class="writing-output writing-rewrite"></div>
+                </div>
             </div>
+        </div>
+
+        <!-- Error List Section -->
+        <div class="writing-error-section">
+            <h2 class="writing-section-title">Error Details</h2>
+            <div id="errorList" class="writing-error-list"></div>
         </div>
     </main>
 
@@ -145,7 +178,7 @@
                         <li><a href="../Dictionnary/dictionnary.html">Từ điển Anh-Việt</a></li>
                         <li><a href="../Translate/translate.html">Dịch văn bản</a></li>
                         <li><a href="../Grammar/grammar.html">Ngữ pháp</a></li>
-                        <li><a href="../Thesaurus/thesaurus.html">Từ đồng nghĩa</a></li>
+                        <li><a href="../Exercises/Exercises.html">Bài tập</a></li>
                         <li><a href="../Game/game.html">Trò chơi</a></li>
                     </ul>
                 </div>
@@ -155,7 +188,7 @@
                     <ul>
                         <li><a href="../Cambridge/vocabulary.html">Từ vựng</a></li>
                         <li><a href="#">Từ mới</a></li>
-                        <li><a href="#">Bài tập</a></li>
+                        <li><a href="../Exercises/Exercises.html">Bài tập</a></li>
                         <li><a href="#">Hướng dẫn</a></li>
                     </ul>
                 </div>
@@ -193,7 +226,8 @@
     </footer>
 
     <script src="../javascript/main.js"></script>
-    <script src="../javascript/dictionary.js"></script>
+    <script src="../javascript/Writing.js" defer></script>
 </body>
 
 </html>
+

@@ -1,5 +1,5 @@
-// Simple front-end translator logic for Translate page
-// Author: Trọng Hiểu (adapted)
+// Translate page logic with dropdown language selection
+// Using MyMemory Translation API (free and fast)
 
 const inputEl = document.getElementById('translate-input');
 const outputEl = document.getElementById('translate-output');
@@ -12,19 +12,28 @@ const swapBtn = document.getElementById('swap-lang-btn');
 
 const MAX_CHARS = 250;
 
-// Supported languages for LibreTranslate
-// code: language name hiển thị
+// Supported languages - expanded list
 const SUPPORTED_LANGUAGES = [
-    { code: 'en', label: 'English' },
-    { code: 'vi', label: 'Vietnamese' },
-    { code: 'es', label: 'Spanish' },
-    { code: 'fr', label: 'French' },
-    { code: 'de', label: 'German' },
-    { code: 'it', label: 'Italian' },
-    { code: 'pt', label: 'Portuguese' },
-    { code: 'ru', label: 'Russian' },
-    { code: 'zh', label: 'Chinese' },
-    { code: 'ar', label: 'Arabic' }
+    { code: 'en', label: 'English', native: 'English' },
+    { code: 'vi', label: 'Vietnamese', native: 'Tiếng Việt' },
+    { code: 'es', label: 'Spanish', native: 'Español' },
+    { code: 'fr', label: 'French', native: 'Français' },
+    { code: 'de', label: 'German', native: 'Deutsch' },
+    { code: 'it', label: 'Italian', native: 'Italiano' },
+    { code: 'pt', label: 'Portuguese', native: 'Português' },
+    { code: 'ru', label: 'Russian', native: 'Русский' },
+    { code: 'zh', label: 'Chinese (Simplified)', native: '中文 (简体)' },
+    { code: 'ja', label: 'Japanese', native: '日本語' },
+    { code: 'ko', label: 'Korean', native: '한국어' },
+    { code: 'ar', label: 'Arabic', native: 'العربية' },
+    { code: 'th', label: 'Thai', native: 'ไทย' },
+    { code: 'id', label: 'Indonesian', native: 'Bahasa Indonesia' },
+    { code: 'hi', label: 'Hindi', native: 'हिन्दी' },
+    { code: 'tr', label: 'Turkish', native: 'Türkçe' },
+    { code: 'pl', label: 'Polish', native: 'Polski' },
+    { code: 'nl', label: 'Dutch', native: 'Nederlands' },
+    { code: 'sv', label: 'Swedish', native: 'Svenska' },
+    { code: 'cs', label: 'Czech', native: 'Čeština' }
 ];
 
 // Update character counter
@@ -49,34 +58,95 @@ function setButtonLanguage(btn, code) {
     }
 }
 
-// Cycle language when clicking on language button
-function attachLanguageCycler(btn) {
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-        const current = btn.dataset.lang || 'en';
-        const index = SUPPORTED_LANGUAGES.findIndex(l => l.code === current);
-        const nextIndex = (index + 1) % SUPPORTED_LANGUAGES.length;
-        setButtonLanguage(btn, SUPPORTED_LANGUAGES[nextIndex].code);
+// Initialize language dropdowns
+function initLanguageDropdown(btnId, dropdownId, listId, searchId, defaultLang) {
+    const btn = document.getElementById(btnId);
+    const dropdown = document.getElementById(dropdownId);
+    const list = document.getElementById(listId);
+    const search = document.getElementById(searchId);
+    
+    if (!btn || !dropdown || !list || !search) return;
+
+    // Render language list
+    function renderList(filter = '') {
+        const filtered = SUPPORTED_LANGUAGES.filter(lang => {
+            const searchTerm = filter.toLowerCase();
+            return lang.label.toLowerCase().includes(searchTerm) ||
+                   lang.native.toLowerCase().includes(searchTerm) ||
+                   lang.code.toLowerCase().includes(searchTerm);
+        });
+
+        list.innerHTML = filtered.map(lang => {
+            const isActive = btn.dataset.lang === lang.code;
+            return `
+                <div class="translate-lang-item ${isActive ? 'active' : ''}" data-code="${lang.code}">
+                    <span class="translate-lang-item-label">${lang.label}</span>
+                    <span class="translate-lang-item-native">${lang.native}</span>
+                </div>
+            `;
+        }).join('');
+
+        // Attach click handlers
+        list.querySelectorAll('.translate-lang-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const code = item.dataset.code;
+                setButtonLanguage(btn, code);
+                closeDropdown();
+            });
+        });
+    }
+
+    function openDropdown() {
+        dropdown.classList.add('active');
+        renderList();
+        search.value = '';
+        search.focus();
+    }
+
+    function closeDropdown() {
+        dropdown.classList.remove('active');
+    }
+
+    // Toggle dropdown on button click
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (dropdown.classList.contains('active')) {
+            closeDropdown();
+        } else {
+            // Close other dropdowns
+            document.querySelectorAll('.translate-lang-dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('active');
+            });
+            openDropdown();
+        }
     });
+
+    // Search functionality
+    search.addEventListener('input', (e) => {
+        renderList(e.target.value);
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
+    // Initialize with default language
+    setButtonLanguage(btn, defaultLang);
 }
 
-attachLanguageCycler(fromLangBtn);
-attachLanguageCycler(toLangBtn);
+// Initialize both dropdowns
+initLanguageDropdown('from-lang-btn', 'from-lang-dropdown', 'from-lang-list', 'from-lang-search', 'en');
+initLanguageDropdown('to-lang-btn', 'to-lang-dropdown', 'to-lang-list', 'to-lang-search', 'vi');
 
 // Swap languages and texts
 if (swapBtn && fromLangBtn && toLangBtn && inputEl && outputEl) {
     swapBtn.addEventListener('click', () => {
         const tmpLang = fromLangBtn.dataset.lang;
-        fromLangBtn.dataset.lang = toLangBtn.dataset.lang;
-        toLangBtn.dataset.lang = tmpLang;
-
-        const fromLabel = fromLangBtn.querySelector('.translate-lang-label');
-        const toLabel = toLangBtn.querySelector('.translate-lang-label');
-        if (fromLabel && toLabel) {
-            const tmpText = fromLabel.textContent;
-            fromLabel.textContent = toLabel.textContent;
-            toLabel.textContent = tmpText;
-        }
+        setButtonLanguage(fromLangBtn, toLangBtn.dataset.lang);
+        setButtonLanguage(toLangBtn, tmpLang);
 
         const tmpTextArea = inputEl.value;
         inputEl.value = outputEl.textContent || '';
@@ -88,32 +158,51 @@ if (swapBtn && fromLangBtn && toLangBtn && inputEl && outputEl) {
     });
 }
 
-// Call LibreTranslate public API (supports Vietnamese and many other languages)
+// Translate using MyMemory API (free, fast, no API key required)
 async function translateText(text, from, to) {
     try {
-        const response = await fetch('https://libretranslate.com/translate', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                q: text,
-                source: from,
-                target: to,
-                format: 'text'
-            })
-        });
-
+        // MyMemory Translation API - free and fast
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+        
+        const response = await fetch(url);
+        
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
         const data = await response.json();
-        return data.translatedText || '';
+        
+        if (data.responseStatus === 200 && data.responseData) {
+            return data.responseData.translatedText || '';
+        } else {
+            throw new Error(data.responseStatus || 'Translation failed');
+        }
     } catch (err) {
         console.error('Translation error:', err);
-        // Fallback: simple fake "translation" so bài vẫn chạy nếu API lỗi
-        return `[translated ${from}->${to}]: ${text}`;
+        // Fallback: try LibreTranslate
+        try {
+            const response = await fetch('https://libretranslate.com/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    q: text,
+                    source: from,
+                    target: to,
+                    format: 'text'
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                return data.translatedText || '';
+            }
+        } catch (fallbackErr) {
+            console.error('Fallback translation error:', fallbackErr);
+        }
+        
+        return `[Lỗi dịch: ${err.message}]`;
     }
 }
 
@@ -123,20 +212,37 @@ if (translateBtn && inputEl && outputEl && fromLangBtn && toLangBtn) {
         const text = inputEl.value.trim();
         if (!text) {
             outputEl.textContent = '';
+            outputEl.classList.remove('loading', 'error');
             return;
         }
 
         const from = fromLangBtn.dataset.lang || 'en';
-        const to = toLangBtn.dataset.lang || 'es';
+        const to = toLangBtn.dataset.lang || 'vi';
+
+        if (from === to) {
+            outputEl.textContent = text;
+            outputEl.classList.remove('loading', 'error');
+            return;
+        }
 
         translateBtn.disabled = true;
-        translateBtn.textContent = 'Translating...';
+        translateBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Translating...';
+        outputEl.classList.add('loading');
+        outputEl.classList.remove('error');
+        outputEl.textContent = '';
 
-        const result = await translateText(text, from, to);
-        outputEl.textContent = result;
-
-        translateBtn.disabled = false;
-        translateBtn.textContent = 'Translate';
+        try {
+            const result = await translateText(text, from, to);
+            outputEl.textContent = result;
+            outputEl.classList.remove('loading', 'error');
+        } catch (err) {
+            outputEl.textContent = `Lỗi: Không thể dịch văn bản. Vui lòng thử lại.`;
+            outputEl.classList.remove('loading');
+            outputEl.classList.add('error');
+        } finally {
+            translateBtn.disabled = false;
+            translateBtn.innerHTML = 'Translate';
+        }
     });
 }
 
@@ -144,17 +250,16 @@ if (translateBtn && inputEl && outputEl && fromLangBtn && toLangBtn) {
 if (copyBtn && outputEl) {
     copyBtn.addEventListener('click', async () => {
         const text = outputEl.textContent || '';
-        if (!text) return;
+        if (!text || outputEl.classList.contains('loading')) return;
         try {
             await navigator.clipboard.writeText(text);
-            copyBtn.textContent = 'Copied';
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fa-solid fa-check"></i><span>Copied!</span>';
             setTimeout(() => {
-                copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i><span>Copy</span>';
-            }, 1000);
+                copyBtn.innerHTML = originalHTML;
+            }, 2000);
         } catch (err) {
             console.error('Copy failed:', err);
         }
     });
 }
-
-

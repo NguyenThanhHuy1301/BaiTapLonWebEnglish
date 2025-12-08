@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/main.css">
+    <link rel="stylesheet" href="../Styles/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Đăng nhập / Đăng ký | UTC2 Dictionary</title>
+    <link rel="icon" type="image/png" class="logo" href="../imgage/logo-utc.png">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <!-- Logo Section -->
+            <div class="auth-header">
+                <a href="../index.html" class="auth-logo-link">
+                    <img src="../imgage/logo-utc.png" alt="UTC2 Dictionary" class="auth-logo">
+                    <h1>UTC2 Dictionary</h1>
+                </a>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Đăng nhập</button>
+                <button class="auth-tab" data-tab="signup">Đăng ký</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form-container" id="login-form">
+                <h2>Đăng nhập vào tài khoản</h2>
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="login-email">Email hoặc tên đăng nhập</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="text" id="login-email" name="email" placeholder="Nhập email hoặc tên đăng nhập" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mật khẩu</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="login-password" name="password" placeholder="Nhập mật khẩu" required>
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span>Ghi nhớ đăng nhập</span>
+                        </label>
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">Đăng nhập</button>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-form-container hidden" id="signup-form">
+                <h2>Tạo tài khoản mới</h2>
+                <form class="auth-form" id="signupForm">
+                    <div class="form-group">
+                        <label for="signup-username">Tên đăng nhập</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="signup-username" name="username" placeholder="Nhập tên đăng nhập" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="signup-email" name="email" placeholder="Nhập email của bạn" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Mật khẩu</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="signup-password" name="password" placeholder="Nhập mật khẩu (tối thiểu 8 ký tự)" required minlength="8">
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Xác nhận mật khẩu</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="signup-confirm-password" name="confirmPassword" placeholder="Nhập lại mật khẩu" required>
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="agree" required>
+                            <span>Tôi đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách bảo mật</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/auth.js"></script>
+</body>
+
+</html>
+

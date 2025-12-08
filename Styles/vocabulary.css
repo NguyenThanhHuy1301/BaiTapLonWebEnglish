@@ -100,13 +100,73 @@
     }
 }
 
+@media (max-width: 768px) {
+    .vocab-main {
+        margin: 30px auto 60px;
+        padding: 0 15px 30px;
+    }
+
+    .vocab-title {
+        font-size: 24px;
+    }
+
+    .vocab-subtitle {
+        font-size: 14px;
+    }
+
+    .vocab-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .vocab-search {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .vocab-filter {
+        width: 100%;
+    }
+
+    .vocab-list-wrapper {
+        padding: 15px 18px;
+    }
+
+    .vocab-letter-heading {
+        font-size: 20px;
+    }
+
+    .vocab-list {
+        columns: 2;
+        column-gap: 20px;
+    }
+}
+
 @media (max-width: 600px) {
     .vocab-main {
-        margin: 20px auto 60px;
+        margin: 20px auto 50px;
+        padding: 0 10px 20px;
+    }
+
+    .vocab-title {
+        font-size: 20px;
+    }
+
+    .vocab-subtitle {
+        font-size: 13px;
     }
 
     .vocab-list {
         columns: 1;
+        padding-left: 20px;
+    }
+
+    .vocab-list-wrapper {
+        padding: 12px 15px;
+    }
+
+    .vocab-letter-heading {
+        font-size: 18px;
     }
 }
 

@@ -1,459 +1,278 @@
-<!-- https://dictionary.cambridge.org/
-Nguyễn Thành Huy -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/main.css">
+    <link rel="stylesheet" href="./Styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>Cambridge Dictionary | English Dictionary Translations & Thesaurus</title>
-    <link rel="icon" type="image/png" class="logo" href="./imgage/logo2.png">
+    <title>UTC2 Dictionary | Trang chủ - Từ điển Anh-Việt trực tuyến</title>
+    <link rel="icon" type="image/png" class="logo" href="./imgage/logo-utc.png">
 </head>
 
-<body class="no-scroll">
+<body class="no-scroll index-page">
     <header class="header">
         <!-- Top Navigation Bar -->
         <nav class="top-nav">
             <div class="nav-left">
-
                 <input type="checkbox" id="menu-button">
                 <label for="menu-button">
                     <div class="hamburger"><i class="fa-solid fa-list"></i></div>
                 </label>
 
                 <ul class="nav-links">
+                    <li><a href="./index.html" class="active">Home</a></li>
                     <li><a href="./Dictionnary/dictionnary.html">Dictionary</a></li>
                     <li><a href="./Translate/translate.html">Translate</a></li>
                     <li><a href="./Grammar/grammar.html">Grammar</a></li>
-                    <li><a href="./Thesaurus/thesaurus.html">Thesaurus</a></li>
-                    <li><a href="./Cambridge/cambridge.html">Cambridge Dictionary +Plus</a></li>
-                    <li><a href="./Game/game.html">Games</a></li>
+                    <li><a href="./Exercises/Exercises.html">Exercises</a></li>
+                    <li><a href="./Writing/Writing.html">Writing Checker</a></li>
                 </ul>
             </div>
             <div class="nav-right">
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a> <!-- Facebook -->
-                    <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a> <!-- Instagram -->
-                    <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a> <!-- X (Twitter) -->
+                    <a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a>
                 </div>
-                <div class="login-signup"><i class="fa-solid fa-user fa-xs"></i><a href="#">Log in</a> / <a
-                        href="#">Sign up</a> </div>
-
-                <input type="checkbox" id="language-button">
-                <label for="language-button">
-                    <div class="language-selector">
-                        <i class="fa-solid fa-earth-americas fa-xs"></i>
-                        <div class="language-english">English (UK) <i class="fa-solid fa-angle-down fa-2xs"></i></div>
-                    </div>
-                </label>
+                <div class="login-signup"><i class="fa-solid fa-user fa-xs"></i><a href="./Auth/auth.html">Log in</a> / <a href="./Auth/auth.html">Sign up</a></div>
             </div>
         </nav>
-
-        <!-- Logo Section -->
-        <div class="logo-section">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="./imgage/CDO-logo-horizontal-negative.svg" alt="logo" class="badge">
-                </a>
-                <!-- <div class="badge"></div>
-                <div class="logo-text">Cambridge Dictionary</div> -->
-            </div>
-        </div>
-
-        <!-- Search Bar Section -->
-        <div class="search-section">
-            <div class="search-bar">
-                <input type="search" class="search-input" placeholder="Search English–Vietnamese">
-                <div class="language-select">
-                    <!-- <i class="fa-solid fa-xmark fa-xs"></i> -->
-                    English-Vietnamese
-                    <span class="menu-dots">⋮</span>
-                </div>
-                <div><i class="fa-solid fa-magnifying-glass fa-sm"></i></div>
-                <!-- <button class="search-btn"></button> -->
-            </div>
-        </div>
-
-        <!-- Small Buttons Section -->
-        <div class="button-section">
-            <button class="small-btn">English</button>
-            <button class="small-btn">Grammar</button>
-            <button class="small-btn">English–French</button>
-            <button class="small-btn">French–English</button>
-        </div>
     </header>
+
+    <!-- Hamburger menu -->
     <div class="menu">
         <div class="menu-left">
             <div
                 style="border-bottom: rgba(0, 0, 0, 0.1) solid 1px;width:100%; height:120px; padding: 15px 15px 20px 15px; position: relative;">
-                <img style="width:168px; height:68px;" src="./imgage/CDO-logo-menu.svg" alt="logo">
+                <img style="width:168px; height:auto; max-height:68px; object-fit: contain;" src="./imgage/logo-utc.png" alt="UTC Logo">
                 <label style="position: absolute; top:20px; right:20px;" for="menu-button"><i
                         class="fa-solid fa-x"></i></label>
             </div>
-            <div class="menu__child"><a href="./Dictionnary/dictionnary.html">Dictionary</a> </div>
-            <div class="menu__child"><a href="./Translate/translate.html">Translate</a> </div>
-            <div class="menu__child"><a href="./Grammar/grammar.html">Grammar</a> </div>
-            <div class="menu__child"><a href="./Thesaurus/thesaurus.html">Thesaurus</a> </div>
-            <div class="menu__child"><a href="#">Pronunciation</a> </div>
-            <div class="menu__child"><a href="./Cambridge/cambridge.html">Cambridge Dictionary +Plus</a> </div>
-            <div class="menu__child"><a href="./Game/game.html">Games</a> </div>
-            <div class="menu__child"><i class="fa-solid fa-user fa-lg"></i><a href="#">Log in</a> / <a href="#">Sign
-                    up</a></div>
-            <div class="menu__child"><i class="fa-solid fa-earth-americas fa-sm"></i> English(UK)</div>
+            <div class="menu__child"><a href="./index.html" class="active">Home</a></div>
+            <div class="menu__child"><a href="./Dictionnary/dictionnary.html">Dictionary</a></div>
+            <div class="menu__child"><a href="./Translate/translate.html">Translate</a></div>
+            <div class="menu__child"><a href="./Grammar/grammar.html">Grammar</a></div>
+            <div class="menu__child"><a href="./Exercises/Exercises.html">Exercises</a></div>
+            <div class="menu__child"><a href="./Writing/Writing.html">Writing Checker</a></div>
+            <div class="menu__child"><a href="./Game/game.html">Games</a></div>
             <div class="menu__child">
-
                 <div class="social-icons">
                     <div>Follow us</div>
                     <div class="right"><a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a></div>
-                    <!-- Facebook -->
-                    <div><a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a> </div> <!-- Instagram -->
-                    <div><a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a></div> <!-- X (Twitter) -->
+                    <div><a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a></div>
+                    <div><a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a></div>
                 </div>
             </div>
         </div>
-
 
         <label class="menu-right" for="menu-button"></label>
     </div>
 
-    <div class="language">
-        <label class="language-right" for="language-button"></label>
-        <div class="language-left">
-            <div
-                style="border-bottom: rgba(0, 0, 0, 0.1) solid 1px;width:100%; height:60px; padding: 20px 5px 15px 15px; position: relative;">
-                <p style="font-size: 1.125rem; color:#1d2a57;">Choose your language</p>
-                <label style="position: absolute; top:20px; right:20px;" for="language-button"><i
-                        class="fa-solid fa-x"></i></label>
-            </div>
-            <div style="padding:15px; ">
-                <p style="font-size:16px; color: #1d2a57;"><i class="fa-solid fa-earth-americas fa-sm"></i> English(UK)
-                </p>
-                <ul style="padding-left: 20px; margin-top: 10px;">
-                    <li class="language_choose"><a href="#">English(US)</a></li>
-                    <li class="language_choose"><a href="#">Español</a></li>
-                    <li class="language_choose"><a href="#">Português</a></li>
-                    <li class="language_choose"><a href="#">中文 (简体)</a></li>
-                    <li class="language_choose"><a href="#">正體中文 (繁體)</a></li>
-                    <li class="language_choose"><a href="#">Dansk</a></li>
-                    <li class="language_choose"><a href="#">Deutsch</a></li>
-                    <li class="language_choose"><a href="#">Français</a></li>
-                    <li class="language_choose"><a href="#">Italiano</a></li>
-                    <li class="language_choose"><a href="#">Nederlands</a></li>
-                    <li class="language_choose"><a href="#">Norsk</a></li>
-                    <li class="language_choose"><a href="#">Polski</a></li>
-                    <li class="language_choose"><a href="#">Русский</a></li>
-                    <li class="language_choose"><a href="#">Türkçe</a></li>
-                    <li class="language_choose"><a href="#">Tiếng Việt</a></li>
-                    <li class="language_choose"><a href="#">Svenska</a></li>
-                    <li class="language_choose"><a href="#">Українська</a></li>
-                    <li class="language_choose"><a href="#">日本語</a></li>
-                    <li class="language_choose"><a href="#">한국어</a></li>
-                    <li class="language_choose"><a href="#">ગુજરાતી</a></li>
-                    <li class="language_choose"><a href="#">தமிழ்</a></li>
-                    <li class="language_choose"><a href="#">తెలుగు</a></li>
-                    <li class="language_choose"><a href="#">বাঙ্গালি</a></li>
-                    <li class="language_choose"><a href="#">मराठी</a></li>
-                    <li class="language_choose"><a href="#">हिंदी</a></li>
-                </ul>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to UTC2 Dictionary</h1>
+                <p class="hero-subtitle">Nền tảng học tiếng Anh toàn diện với đầy đủ công cụ hỗ trợ bạn trong hành trình chinh phục ngôn ngữ</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="hero-btn hero-btn-secondary">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        Khám phá tính năng
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-
-
-    <div class="content">
-        <div class="item">
-            <div class="Content_name">Explore the Cambridge Dictionary</div>
-            <!-- cần sửa hôm nay -->
-            <div class="content-language">
-                <!-- 4 ô bên phải -->
-                <div class="content-language-english">
-                    <!-- ô 1  -->
-                    <div class="content-language-english-part1">
-                        <div class="bg" style="background: linear-gradient(to right, #36d1dc, #5b86e5);"></div>
-                        <div class="content-language-english-part1-ct">
-                            <div style="font-size: 19px; color: #1d2a57; padding:15px 15px 20px;">English dictionaries
-                            </div>
-                            <div class="content-language-english-part1_link"><a href="#">English</a> </div>
-                            <div class="content-language-english-part1_link"><a href="#">Learner’s Dictionary</a> </div>
-                            <div class="content-language-english-part1_link"><a href="#">Essential British English</a>
-                            </div>
-                            <div class="content-language-english-part1_link" style="margin-bottom:12px;"><a
-                                    href="#">Essential American English</a> </div>
-                        </div>
-                    </div>
-                    <!-- ô 2  -->
-                    <div class="content-language-english-part2">
-                        <div class="bg" style="background: linear-gradient(to right, #f7971e, #ffd200);"></div>
-                        <div class="content-language-Grammar"><a href="/Grammar/grammar.html">Grammar</a> </div>
-                    </div>
-                    <!-- ô 3  -->
-                    <div class="content-language-english-part2">
-                        <div class="bg" style="background: linear-gradient(to right, #fbc2eb, #a6c1ee);"></div>
-                        <div class="content-language-Grammar"><a href="/Thesaurus/thesaurus.html">Thesaurus</a> </div>
-                    </div>
-                    <!-- ô 4  -->
-                    <div class="content-language-english-part2">
-                        <div class="bg" style="background: linear-gradient(to bottom, #1a5f7a, #159895, #57c5b6);">
-                        </div>
-                        <div class="content-language-Grammar"><a href="#">Pronunciation</a> </div>
-                    </div>
-                </div>
-                <!-- 1 ô bên trái  -->
-                <div class="content-language-translation">
-                    <div class="bg" style="background: linear-gradient(to right, #8e2de2, #4a00e0);"></div>
-                    <div class="content-language-translation-right">
-                        <div class="translation-right-name">
-                            <h4>Translation dictionaries</h4>
-                        </div>
-                        <div class="translation-right-note">Click on the arrows to change the translation direction.
-                        </div>
-
-                        <div class="translation-right-list">
-                            <ul>
-                                <li class="content-language-english-part1_link"><i class="fa-solid fa-left-right"
-                                        style="color: #d14620; margin-right: 10px;"> </i> <a href="#">English-Chinese
-                                        (Simplified)</a>
-                                </li>
-                                <li class="content-language-english-part1_link"><i class="fa-solid fa-left-right"
-                                        style="color: #d14620;margin-right: 10px;"> </i><a href="#">English-Chinese
-                                        (Traditional)</a>
-                                </li>
-                                <li class="content-language-english-part1_link"><i class="fa-solid fa-left-right"
-                                        style="color: #d14620;margin-right: 10px;"> </i><a href="#">English-Dutch</a>
-                                </li>
-                                <li class="content-language-english-part1_link"><i class="fa-solid fa-left-right"
-                                        style="color: #d14620;margin-right: 10px;"> </i><a href="#">English-French</a>
-                                </li>
-                                <li class="content-language-english-part1_link"><i class="fa-solid fa-left-right"
-                                        style="color: #d14620;margin-right: 10px;"> </i><a href="#">English-German</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="translation-right-more"><i class="fa-notdog-duo fa-solid fa-plus"></i> See more
-                        </div>
-                    </div>
-                </div>
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">Tính năng nổi bật</h2>
+                <p class="section-subtitle">Khám phá các công cụ mạnh mẽ giúp bạn học tiếng Anh hiệu quả</p>
             </div>
 
-            <div class="information">
-                <div class="information-1">
-
-                    <div style="width:50%;height:auto;padding: 8px 12px 12px;background-color: #1d2956;">
-                        <a href="#">
-                            <div class="img-word2025" style="width:90%;margin: 0 auto;"></div>
-                        </a>
+            <div class="features-grid">
+                <!-- Dictionary Card -->
+                <div class="feature-card" data-feature="dictionary">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-book"></i>
                     </div>
-
-
-                    <div class="information-word2025">
-                        <div style="margin-bottom: 10px;color:#1d2a57;font-size: 24px;font-weight: 400;">Word of the
-                            Year 2025</div>
-                        <div style="margin: 10px 0;color:#1d2a57;font-size: 18px;">Discover the word that defined 2025
-                            and captured the year’s spirit.</div>
-                        <div style="margin: 10px 0;color:#1d2a57;font-size: 18px;">Find out what it means and why it
-                            stood out.</div>
-                        <div style="margin-top: 10px;"><a href="#"><button class="learn-more">Learn more</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="information-1">
-                    <a href="" class="img-word2025 make-opacity"></a>
-                    <div class="blog">
-                        <div style="font-size: 12px;font-weight: 400;color: #1d2a57;margin-bottom: 15px;">BLOG</div>
-                        <div style="font-size: 19px;color: #1d2a57;margin-bottom: 15px;"><a href="#"
-                                class="a_underline">Cambridge Dictionary’s Word of the Year 2025</a></div>
-                        <div style="font-size: 14px;color: #1d2a57;margin-bottom: 20px;">November 18, 2025</div>
-                        <div><a href="#"><button class="read-more">Read more</button></a></div>
-                    </div>
-                </div>
-                <div class="information-1" style="height:192px;">
-                    <div class="pronounce-the-word">
-                        <div class="social-icons">
-                            <a href="#" style="margin: 10px;"><i class="fa-brands fa-facebook-f fa-xs"></i></a>
-                            <!-- Facebook -->
-                            <a href="#" style="margin: 10px;"><i class="fa-brands fa-x-twitter fa-xs"></i></a>
-                            <!-- X (Twitter) -->
-                        </div>
-                        <div style="font-size: 12px; margin: 10px auto;">WORD OF THE DAY</div>
-                        <div style="font-size: 36px; margin: 5px auto; color:#1d2a57;"><a href="#">wanderlust</a> </div>
-                        <div style="font-size: 16px; margin: 15px auto;">UK <button id="btnPlay"
-                                style="background: none;border: none;"><i
-                                    class="fa-solid fa-volume-low fa-lg"></i></button>/ˈwɒn.də.lʌst/ &nbsp;&nbsp;&nbsp;
-                            US <button id="btnPlay2" style="background: none;border: none;"><i
-                                    class="fa-solid fa-volume-low fa-lg"></i></button> /ˈwɑːn.dɚ.lʌst/</div>
-                        <audio id="myAudio" src="/sound/sound-wanderlust.MP3" preload="auto"></audio>
-                        <audio id="myAudio2" src="/sound/sound-wanderlust-2.MP3" preload="auto"></audio>
-
-                    </div>
-                    <div class="pronounce-the-word-right">
-                        <div style="margin-bottom: 20px; font-size: 16px;">A strong desire or impulse to travel and
-                            explore the world.</div>
-                        <div><button class="read-more">About this</button></div>
-                    </div>
+                    <h3 class="feature-title">Từ điển Anh-Việt</h3>
+                    <p class="feature-description">Tra cứu từ vựng nhanh chóng với định nghĩa chi tiết, phiên âm, ví dụ và từ đồng nghĩa</p>
+                    <a href="./Dictionnary/dictionnary.html" class="feature-link">
+                        Sử dụng ngay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <div class="information-1" style="height:288px;">
-                    <a href="" class="img-new-word make-opacity"></a>
-                    <div class="pronounce-the-word-right">
-                        <div style="font-size: 12px;font-weight: 400;margin-bottom: 5px; color: #1d2a57">NEW WORDS</div>
-                        <div style="font-size: 36px;margin-bottom: 15px; color: #1d2a57;">fambushing</div>
-                        <div style="font-size: 14px;margin-bottom: 20px; color:#626a8a;">November 24, 2025</div>
-                        <div><button class="read-more">More new words</button></div>
+                <!-- Translate Card -->
+                <div class="feature-card" data-feature="translate">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-language"></i>
                     </div>
+                    <h3 class="feature-title">Dịch văn bản</h3>
+                    <p class="feature-description">Dịch đoạn văn dài giữa nhiều ngôn ngữ với độ chính xác cao, hỗ trợ đa ngôn ngữ</p>
+                    <a href="./Translate/translate.html" class="feature-link">
+                        Sử dụng ngay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="information-1"
-                    style="padding:25px 20px 20px 50px;background-color: #ddfaff; height:307px;flex-direction: column;">
-                    <div>
-                        <h2 style="margin-bottom: 15px; color: #1d2a57; font-weight: 400;">Popular searches</h2>
-                    </div>
-                    <div>
-                        <p style="margin-bottom: 25px;">English Dictionary</p>
-                    </div>
-                    <div class="list-wrapper">
-                        <ul class="search-list">
-                            <li><span class="item-number">01</span> <a href="#">work</a></li>
-                            <li><span class="item-number">02</span> <a href="#">colleague</a></li>
-                            <li><span class="item-number">03</span> <a href="#">prorogue</a></li>
-                            <li><span class="item-number">04</span> <a href="#">desert</a></li>
-                            <li><span class="item-number">05</span> <a href="#">feature</a></li>
-                        </ul>
 
-                        <ul class="search-list">
-                            <li><span class="item-number">06</span> <a href="#">bear</a></li>
-                            <li><span class="item-number">07</span> <a href="#">water</a></li>
-                            <li><span class="item-number">08</span> <a href="#">present</a></li>
-                            <li><span class="item-number">09</span> <a href="#">experience</a></li>
-                            <li><span class="item-number">10</span> <a href="#">parasocial</a></li>
-                        </ul>
+                <!-- Grammar Card -->
+                <div class="feature-card" data-feature="grammar">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-spell-check"></i>
                     </div>
-
-
+                    <h3 class="feature-title">Ngữ pháp tiếng Anh</h3>
+                    <p class="feature-description">Học ngữ pháp từ cơ bản đến nâng cao với giải thích chi tiết và bài tập thực hành</p>
+                    <a href="./Grammar/grammar.html" class="feature-link">
+                        Sử dụng ngay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="information-1"
-                    style="min-height: 220px;height: auto; padding: 25px 20px 20px 50px;color: #ffffff;flex-direction: column;background-color: #1d2a57;  margin-bottom: 75px;">
-                    <h2 style="margin-bottom: 15px;font-weight: 400;">Browse the English Dictionary</h2>
 
-                    <div class="alphabet-grid">
-                        <a href="#" class="active">0–9</a>
-                        <a href="#">a</a>
-                        <a href="#">b</a>
-                        <a href="#">c</a>
-                        <a href="#">d</a>
-                        <a href="#">e</a>
-                        <a href="#">f</a>
-                        <a href="#">g</a>
-                        <a href="#">h</a>
-                        <a href="#">i</a>
-                        <a href="#">j</a>
-                        <a href="#">k</a>
-                        <a href="#">l</a>
-                        <a href="#">m</a>
-                        <a href="#">n</a>
-                        <a href="#">o</a>
-                        <a href="#">p</a>
-                        <a href="#">q</a>
-                        <a href="#">r</a>
-                        <a href="#">s</a>
-                        <a href="#">t</a>
-                        <a href="#">u</a>
-                        <a href="#">v</a>
-                        <a href="#">w</a>
-                        <a href="#">x</a>
-                        <a href="#">y</a>
-                        <a href="#">z</a>
+                <!-- Exercises Card -->
+                <div class="feature-card" data-feature="exercises">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-clipboard-question"></i>
                     </div>
-
-                    <div class="index-link-area">
-                        Or, browse the Cambridge Dictionary <a href="#">index</a>
-                    </div>
+                    <h3 class="feature-title">Bài tập thực hành</h3>
+                    <p class="feature-description">Luyện tập với hàng nghìn bài tập đa dạng, từ vựng, ngữ pháp và kỹ năng đọc hiểu</p>
+                    <a href="./Exercises/Exercises.html" class="feature-link">
+                        Sử dụng ngay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-            </div>
 
-        </div>
-        <div class="item">
-            <div class="log-in">
-                <div class="part-1"><div>Cambridge</div> </div>
-                <div class="part-2"><div>Dictionary +Plus</div></div>
-                <div class="part-3">Free word lists and quizzes to create, download and share!</div>
-                <div class="part-4"><a href="#"><button class="read-more">Go to +Plus</button></a> or <a href="#"><button class="read-more" style="background-color: #5ce8ff; color:#1d2a57;">Log in</button></a> </div>
+                <!-- Writing Checker Card -->
+                <div class="feature-card" data-feature="writing">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="feature-title">Kiểm tra bài viết</h3>
+                    <p class="feature-description">Kiểm tra lỗi ngữ pháp, chính tả và cải thiện bài viết tiếng Anh của bạn tự động</p>
+                    <a href="./Writing/Writing.html" class="feature-link">
+                        Sử dụng ngay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Games Card -->
+                <div class="feature-card" data-feature="games">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="feature-title">Trò chơi học tập</h3>
+                    <p class="feature-description">Học tiếng Anh qua các trò chơi thú vị, vừa giải trí vừa nâng cao vốn từ vựng</p>
+                    <a href="./Game/game.html" class="feature-link">
+                        Sử dụng ngay <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-target="10000">0</div>
+                <div class="stat-label">Từ vựng</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Bài tập</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Chủ đề ngữ pháp</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Ngôn ngữ hỗ trợ</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Sẵn sàng bắt đầu hành trình học tiếng Anh?</h2>
+            <p class="cta-subtitle">Tham gia cùng hàng nghìn người dùng đang sử dụng UTC2 Dictionary mỗi ngày</p>
+            <div class="cta-buttons">
+                <a href="./Auth/auth.html" class="cta-btn cta-btn-primary">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Đăng ký miễn phí
+                </a>
+                <a href="./Dictionnary/dictionnary.html" class="cta-btn cta-btn-secondary">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    Bắt đầu ngay
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-content-wrapper">
-
             <div class="footer-menu-group">
-
                 <div class="footer-col" style="padding-left: 0;">
-                    <a href="#" class="footer-header">LEARN</a>
+                    <a href="#" class="footer-header">TRA CỨU</a>
                     <ul>
-                        <li><a href="#">New Words</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">In Print</a></li>
-                        <li><a href="#">Word of the Year 2021</a></li>
-                        <li><a href="#">Word of the Year 2022</a></li>
-                        <li><a href="#">Word of the Year 2023</a></li>
-                        <li><a href="#">Word of the Year 2024</a></li>
-                        <li><a href="#">Word of the Year 2025</a></li>
+                        <li><a href="./Dictionnary/dictionnary.html">Từ điển Anh-Việt</a></li>
+                        <li><a href="./Translate/translate.html">Dịch văn bản</a></li>
+                        <li><a href="./Grammar/grammar.html">Ngữ pháp</a></li>
+                        <li><a href="./Exercises/Exercises.html">Bài tập</a></li>
+                        <li><a href="./Game/game.html">Trò chơi</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <a href="#" class="footer-header">DEVELOP</a>
+                    <a href="#" class="footer-header">HỌC TẬP</a>
                     <ul>
-                        <li><a href="#">Dictionary API</a></li>
-                        <li><a href="#">Double-Click Lookup</a></li>
-                        <li><a href="#">Search Widgets</a></li>
-                        <li><a href="#">License Data</a></li>
+                        <li><a href="./Cambridge/vocabulary.html">Từ vựng</a></li>
+                        <li><a href="#">Từ mới</a></li>
+                        <li><a href="./Exercises/Exercises.html">Bài tập</a></li>
+                        <li><a href="#">Hướng dẫn</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <a href="#" class="footer-header">ABOUT</a>
+                    <a href="#" class="footer-header">THÔNG TIN</a>
                     <ul>
-                        <li><a href="#">Accessibility</a></li>
-                        <li><a href="#">Cambridge English</a></li>
-                        <li><a href="#">Cambridge University Press & Assessment</a></li>
-                        <li><a href="#">Cookies and Privacy</a></li>
-                        <li><a href="#">Corpus</a></li>
-                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-right-side">
-                <div class="social-icons" style="gap:20px;margin-right: 0px;">
-                    <a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a> <!-- Facebook -->
-                    <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a> <!-- Instagram -->
-                    <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a> <!-- X (Twitter) -->
-                </div>
-
-                <div class="cambridge-logo">
-                    <div><a href="#"><img src="/imgage/footer-logo.png" alt="logo-univenciti"></a></div>
-
-                </div>
-                <div>
-                    <div><img style="width: 210px;" src="/imgage/footer-where-your-world-grows.png" alt="footer-where-your-world-grows"></div>
-
+                <div class="footer-logo-section">
+                    <img src="./imgage/logo-utc.png" alt="UTC Logo">
+                    <h3 class="footer-logo-title">UTC2 Dictionary</h3>
+                    <p class="footer-logo-subtitle">Từ điển Anh-Việt trực tuyến</p>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
                 </div>
                 <div class="footer-bottom">
                     <p class="copyright">
-                        © Cambridge University Press &
-                    <p style="font-size: 12px;margin: 0; text-align: center;">Assessment 2025</p>
+                        © 2025 UTC2 Dictionary. All rights reserved.
                     </p>
                 </div>
             </div>
         </div>
-
     </footer>
 
-    <script src="/javascript/main.js"></script>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/index.js"></script>
 </body>
 
 </html>

@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Styles/main.css">
-    <link rel="stylesheet" href="./Styles/Grammar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/main.css">
+    <link rel="stylesheet" href="../Styles/Grammar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Cambridge Dictionary | English Dictionary Translations &amp; Thesaurus</title>
-    <link rel="icon" type="image/png" class="logo" href="./imgage/logo2.png">
+    <title>UTC2 Grammar | Học Ngữ Pháp Tiếng Anh</title>
+    <link rel="icon" type="image/png" class="logo" href="../imgage/logo-utc.png">
 </head>
 
 <body class="no-scroll">
     <header class="header">
+        <!-- Top Navigation Bar -->
         <nav class="top-nav">
             <div class="nav-left">
                 <input type="checkbox" id="menu-button">
                 <label for="menu-button">
                     <div class="hamburger"><i class="fa-solid fa-list"></i></div>
                 </label>
+
                 <ul class="nav-links">
-                    <li><a href="./Dictionnary/dictionnary.html">Dictionary</a></li>
-                    <li><a href="./Translate/translate.html">Translate</a></li>
-                    <li><a href="./Grammar/grammar.html">Grammar</a></li>
-                    <li><a href="./Thesaurus/thesaurus.html">Thesaurus</a></li>
-                    <li><a href="./Cambridge/cambridge.html">Cambridge Dictionary +Plus</a></li>
-                    <li><a href="./Game/game.html">Games</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../Dictionnary/dictionnary.html">Dictionary</a></li>
+                    <li><a href="../Translate/translate.html">Translate</a></li>
+                    <li><a href="../Grammar/grammar.html" class="active">Grammar</a></li>
+                    <li><a href="../Exercises/Exercises.html">Exercises</a></li>
+                    <li><a href="../Writing/Writing.html">Writing Checker</a></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -36,63 +41,42 @@
                     <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a>
                     <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a>
                 </div>
-                <div class="login-signup"><i class="fa-solid fa-user fa-xs"></i><a href="#">Log in</a> / <a
-                        href="#">Sign up</a></div>
-                <input type="checkbox" id="language-button">
-                <label for="language-button">
-                    <div class="language-selector">
-                        <i class="fa-solid fa-earth-americas fa-xs"></i>
-                        <div class="language-english">English (UK) <i class="fa-solid fa-angle-down fa-2xs"></i></div>
-                    </div>
-                </label>
+                <div class="login-signup"><i class="fa-solid fa-user fa-xs"></i><a href="../Auth/auth.html">Log in</a> / <a href="../Auth/auth.html">Sign up</a></div>
             </div>
         </nav>
 
+        <!-- Logo Section -->
         <div class="logo-section">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="./imgage/CDO-logo-horizontal-negative.svg" alt="logo" class="badge">
-                </a>
-            </div>
-        </div>
-
-        <div class="search-section">
-            <div class="search-bar">
-                <input type="search" class="search-input" placeholder="Search Grammar">
-                <div class="language-select">
-                        Grammar
-                    <span class="menu-dots">⋮</span>
+            <div class="logo-wrapper">
+                <div class="logo-image-wrapper">
+                    <img src="../imgage/logo-utc.png" alt="UTC Logo" class="logo-image">
                 </div>
-                <div><i class="fa-solid fa-magnifying-glass fa-sm"></i></div>
+                <div class="logo-content">
+                    <a href="../index.html" class="logo-text-link">
+                        <h1 class="logo-text">UTC2 Grammar</h1>
+                    </a>
+                    <p class="logo-subtitle">Học ngữ pháp tiếng Anh dễ hiểu, ví dụ rõ ràng, bài tập kèm theo</p>
+                </div>
             </div>
-        </div>
-
-        <div class="button-section">
-            <button class="small-btn">English</button>
-            <button class="small-btn">Grammar</button>
-            <button class="small-btn">English–French</button>
-            <button class="small-btn">French–English</button>
         </div>
     </header>
 
+    <!-- Hamburger menu -->
     <div class="menu">
         <div class="menu-left">
             <div
                 style="border-bottom: rgba(0, 0, 0, 0.1) solid 1px;width:100%; height:120px; padding: 15px 15px 20px 15px; position: relative;">
-                <img style="width:168px; height:68px;" src="./imgage/CDO-logo-menu.svg" alt="logo">
+                <img style="width:168px; height:auto; max-height:68px; object-fit: contain;" src="../imgage/logo-utc.png" alt="UTC Logo">
                 <label style="position: absolute; top:20px; right:20px;" for="menu-button"><i
                         class="fa-solid fa-x"></i></label>
             </div>
-            <div class="menu__child"><a href="./Dictionnary/dictionnary.html">Dictionary</a></div>
-            <div class="menu__child"><a href="./Translate/translate.html">Translate</a></div>
-            <div class="menu__child"><a href="./Grammar/grammar.html">Grammar</a></div>
-            <div class="menu__child"><a href="./Thesaurus/thesaurus.html">Thesaurus</a></div>
-            <div class="menu__child"><a href="#">Pronunciation</a></div>
-            <div class="menu__child"><a href="./Cambridge/cambridge.html">Cambridge Dictionary +Plus</a></div>
-            <div class="menu__child"><a href="./Game/game.html">Games</a></div>
-            <div class="menu__child"><i class="fa-solid fa-user fa-lg"></i><a href="#">Log in</a> / <a href="#">Sign
-                    up</a></div>
-            <div class="menu__child"><i class="fa-solid fa-earth-americas fa-sm"></i> English(UK)</div>
+            <div class="menu__child"><a href="../index.html">Home</a></div>
+            <div class="menu__child"><a href="../Dictionnary/dictionnary.html">Dictionary</a></div>
+            <div class="menu__child"><a href="../Translate/translate.html">Translate</a></div>
+            <div class="menu__child"><a href="../Grammar/grammar.html" class="active">Grammar</a></div>
+            <div class="menu__child"><a href="../Exercises/Exercises.html">Exercises</a></div>
+            <div class="menu__child"><a href="../Writing/Writing.html">Writing Checker</a></div>
+            <div class="menu__child"><a href="../Game/game.html">Games</a></div>
             <div class="menu__child">
                 <div class="social-icons">
                     <div>Follow us</div>
@@ -102,245 +86,111 @@
                 </div>
             </div>
         </div>
+
         <label class="menu-right" for="menu-button"></label>
     </div>
 
-    <div class="language">
-        <label class="language-right" for="language-button"></label>
-        <div class="language-left">
-            <div
-                style="border-bottom: rgba(0, 0, 0, 0.1) solid 1px;width:100%; height:60px; padding: 20px 5px 15px 15px; position: relative;">
-                <p style="font-size: 1.125rem; color:#1d2a57;">Choose your language</p>
-                <label style="position: absolute; top:20px; right:20px;" for="language-button"><i
-                        class="fa-solid fa-x"></i></label>
+    <!-- Search and Filter Section -->
+    <section class="grammar-search-section">
+        <div class="grammar-search-wrapper">
+            <div class="grammar-search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="grammar-search-input" class="grammar-search-input" 
+                       placeholder="Tìm chủ đề ngữ pháp (tenses, conditionals, passive...)">
+                <button id="grammar-search-btn" class="grammar-search-btn">Tìm kiếm</button>
             </div>
-            <div style="padding:15px;">
-                <p style="font-size:16px; color: #1d2a57;"><i class="fa-solid fa-earth-americas fa-sm"></i> English(UK)
-                </p>
-                <ul style="padding-left: 20px; margin-top: 10px;">
-                    <li class="language_choose"><a href="#">English(US)</a></li>
-                    <li class="language_choose"><a href="#">Español</a></li>
-                    <li class="language_choose"><a href="#">Português</a></li>
-                    <li class="language_choose"><a href="#">中文 (简体)</a></li>
-                    <li class="language_choose"><a href="#">正體中文 (繁體)</a></li>
-                    <li class="language_choose"><a href="#">Dansk</a></li>
-                    <li class="language_choose"><a href="#">Deutsch</a></li>
-                    <li class="language_choose"><a href="#">Français</a></li>
-                    <li class="language_choose"><a href="#">Italiano</a></li>
-                    <li class="language_choose"><a href="#">Nederlands</a></li>
-                    <li class="language_choose"><a href="#">Norsk</a></li>
-                    <li class="language_choose"><a href="#">Polski</a></li>
-                    <li class="language_choose"><a href="#">Русский</a></li>
-                    <li class="language_choose"><a href="#">Türkçe</a></li>
-                    <li class="language_choose"><a href="#">Tiếng Việt</a></li>
-                    <li class="language_choose"><a href="#">Svenska</a></li>
-                    <li class="language_choose"><a href="#">Українська</a></li>
-                    <li class="language_choose"><a href="#">日本語</a></li>
-                    <li class="language_choose"><a href="#">한국어</a></li>
-                    <li class="language_choose"><a href="#">ગુજરાતી</a></li>
-                    <li class="language_choose"><a href="#">தமிழ்</a></li>
-                    <li class="language_choose"><a href="#">తెలుగు</a></li>
-                    <li class="language_choose"><a href="#">বাঙ্গালি</a></li>
-                    <li class="language_choose"><a href="#">मराठी</a></li>
-                    <li class="language_choose"><a href="#">हिंदी</a></li>
-                </ul>
+            <div class="grammar-filter-chips">
+                <button class="grammar-filter-chip active" data-category="all">Tất cả</button>
+                <button class="grammar-filter-chip" data-category="tenses">Thì (Tenses)</button>
+                <button class="grammar-filter-chip" data-category="sentence-structure">Cấu trúc câu</button>
+                <button class="grammar-filter-chip" data-category="modal-verbs">Modal verbs</button>
+                <button class="grammar-filter-chip" data-category="conditionals">Câu điều kiện</button>
+                <button class="grammar-filter-chip" data-category="passive">Câu bị động</button>
+                <button class="grammar-filter-chip" data-category="relative-clauses">Mệnh đề quan hệ</button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content grammar-layout">
-        <div class="item grammar-main">
-            <section class="grammar-hero">
-                <div class="grammar-hero-copy">
-                    <h1>Explore the English Grammar</h1>
-                    <p>Get clear grammar explanations with hundreds of examples of how grammar is used in natural written
-                        and spoken English.</p>
+    <!-- Main Content Section -->
+    <main class="grammar-main-container">
+        <div class="grammar-content-wrapper">
+            <!-- Left Column: Grammar Cards -->
+            <div class="grammar-cards-column">
+                <div class="grammar-cards-grid" id="grammar-cards-container">
+                    <!-- Cards will be generated by JavaScript -->
                 </div>
-                <div class="grammar-category-card">
-                    <div class="accent-strip" aria-hidden="true"></div>
-                    <ul>
-                        <li><a href="#">Adjectives and adverbs</a></li>
-                        <li><a href="#">Easily confused words</a></li>
-                        <li><a href="#">Nouns, pronouns and determiners</a></li>
-                        <li><a href="#">Prepositions and particles</a></li>
-                        <li><a href="#">Using English</a></li>
-                        <li><a href="#">Verbs</a></li>
-                        <li><a href="#">Words, sentences and clauses</a></li>
-                    </ul>
-                </div>
-            </section>
+            </div>
 
-            <section class="grammar-browse">
-                <h2>Browse the English Grammar</h2>
-                <div class="alphabet-grid">
-                    <a href="#" class="active">0–9</a>
-                    <a href="#">a</a>
-                    <a href="#">b</a>
-                    <a href="#">c</a>
-                    <a href="#">d</a>
-                    <a href="#">e</a>
-                    <a href="#">f</a>
-                    <a href="#">g</a>
-                    <a href="#">h</a>
-                    <a href="#">i</a>
-                    <a href="#">j</a>
-                    <a href="#">k</a>
-                    <a href="#">l</a>
-                    <a href="#">m</a>
-                    <a href="#">n</a>
-                    <a href="#">o</a>
-                    <a href="#">p</a>
-                    <a href="#">q</a>
-                    <a href="#">r</a>
-                    <a href="#">s</a>
-                    <a href="#">t</a>
-                    <a href="#">u</a>
-                    <a href="#">v</a>
-                    <a href="#">w</a>
-                    <a href="#">x</a>
-                    <a href="#">y</a>
-                    <a href="#">z</a>
-                </div>
-                <div class="index-link-area">
-                    Or, browse the Cambridge Dictionary <a href="#">index</a>
-                </div>
-            </section>
-
-            <section class="grammar-key-features">
-                <h2>Key features</h2>
-                <p>Adapted from <em>English Grammar Today</em>, the English Grammar provides authentic examples of the way
-                    in which grammar is used in real-life situations, including standard and non-standard varieties of
-                    English. Written by a team of leading experts, and based on extensive research on the Cambridge English
-                    Corpus, it’s ideal for intermediate learners of English at CEFR levels B1-B2, including anyone
-                    preparing for intermediate <a href="#">Cambridge Exams</a> for schools.</p>
-                <div class="feature-grid">
-                    <article class="feature-card">
+            <!-- Right Column: Detail Panel -->
+            <div class="grammar-detail-column">
+                <div class="grammar-detail-panel" id="grammar-detail-panel">
+                    <div class="grammar-detail-placeholder">
                         <i class="fa-solid fa-book-open"></i>
-                        <p>Over 500 topics with clear and simple explanations</p>
-                    </article>
-                    <article class="feature-card">
-                        <i class="fa-solid fa-quote-right"></i>
-                        <p>Thousands of real-life examples show how grammar is used</p>
-                    </article>
-                    <article class="feature-card">
-                        <i class="fa-solid fa-database"></i>
-                        <p>Based on the Cambridge English Corpus — a database of over 2 billion words</p>
-                    </article>
-                    <article class="feature-card">
-                        <i class="fa-solid fa-spell-check"></i>
-                        <p>Useful information on spelling, punctuation and word formation</p>
-                    </article>
-                    <article class="feature-card">
-                        <i class="fa-solid fa-comments"></i>
-                        <p>Important advice on how to use English in conversation</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="grammar-acknowledgements">
-                <h2>Acknowledgements</h2>
-                <p><em>English Grammar Today: An A–Z of Spoken and Written Grammar</em><br>© 2016 Cambridge University
-                    Press</p>
-                <div class="ack-grid">
-                    <div>
-                        <h3>Authors</h3>
-                        <ul>
-                            <li>Ronald Carter</li>
-                            <li>Michael McCarthy</li>
-                            <li>Geraldine Mark</li>
-                            <li>Anne O’Keeffe</li>
-                        </ul>
+                        <p>Chọn một chủ đề ngữ pháp để xem chi tiết</p>
                     </div>
-                    <div>
-                        <h3>Editors, web adaptation</h3>
-                        <ul>
-                            <li>Jessica Rundell</li>
-                            <li>Helen Freeman</li>
-                            <li>Wendalyn Nichols</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="item grammar-side">
-            <div class="log-in">
-                <div class="part-1">
-                    <div>Cambridge</div>
-                </div>
-                <div class="part-2">
-                    <div>Dictionary +Plus</div>
-                </div>
-                <div class="part-3">Free word lists and quizzes to create, download and share!</div>
-                <div class="part-4"><a href="#"><button class="read-more">Go to +Plus</button></a> or <a href="#"><button
-                                class="read-more" style="background-color: #5ce8ff; color:#1d2a57;">Log in</button></a>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="footer">
         <div class="footer-content-wrapper">
             <div class="footer-menu-group">
                 <div class="footer-col" style="padding-left: 0;">
-                    <a href="#" class="footer-header">LEARN</a>
+                    <a href="#" class="footer-header">TRA CỨU</a>
                     <ul>
-                        <li><a href="#">New Words</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">In Print</a></li>
-                        <li><a href="#">Word of the Year 2021</a></li>
-                        <li><a href="#">Word of the Year 2022</a></li>
-                        <li><a href="#">Word of the Year 2023</a></li>
-                        <li><a href="#">Word of the Year 2024</a></li>
-                        <li><a href="#">Word of the Year 2025</a></li>
+                        <li><a href="../Dictionnary/dictionnary.html">Từ điển Anh-Việt</a></li>
+                        <li><a href="../Translate/translate.html">Dịch văn bản</a></li>
+                        <li><a href="../Grammar/grammar.html">Ngữ pháp</a></li>
+                        <li><a href="../Thesaurus/thesaurus.html">Từ đồng nghĩa</a></li>
+                        <li><a href="../Game/game.html">Trò chơi</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
-                    <a href="#" class="footer-header">DEVELOP</a>
+                    <a href="#" class="footer-header">HỌC TẬP</a>
                     <ul>
-                        <li><a href="#">Dictionary API</a></li>
-                        <li><a href="#">Double-Click Lookup</a></li>
-                        <li><a href="#">Search Widgets</a></li>
-                        <li><a href="#">License Data</a></li>
+                        <li><a href="../Cambridge/vocabulary.html">Từ vựng</a></li>
+                        <li><a href="#">Từ mới</a></li>
+                        <li><a href="#">Bài tập</a></li>
+                        <li><a href="#">Hướng dẫn</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
-                    <a href="#" class="footer-header">ABOUT</a>
+                    <a href="#" class="footer-header">THÔNG TIN</a>
                     <ul>
-                        <li><a href="#">Accessibility</a></li>
-                        <li><a href="#">Cambridge English</a></li>
-                        <li><a href="#">Cambridge University Press &amp; Assessment</a></li>
-                        <li><a href="#">Cookies and Privacy</a></li>
-                        <li><a href="#">Corpus</a></li>
-                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-right-side">
-                <div class="social-icons" style="gap:20px;margin-right: 0px;">
-                    <a href="#"><i class="fa-brands fa-facebook-f fa-xs"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a>
-                </div>
-                <div class="cambridge-logo">
-                    <div><a href="#"><img src="/imgage/footer-logo.png" alt="logo-univenciti"></a></div>
-                </div>
-                <div>
-                    <div><img style="width: 210px;" src="/imgage/footer-where-your-world-grows.png"
-                            alt="footer-where-your-world-grows"></div>
+                <div class="footer-logo-section">
+                    <img src="../imgage/logo-utc.png" alt="UTC Logo">
+                    <h3 class="footer-logo-title">UTC2 Dictionary</h3>
+                    <p class="footer-logo-subtitle">Từ điển Anh-Việt trực tuyến</p>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
                 </div>
                 <div class="footer-bottom">
                     <p class="copyright">
-                        © Cambridge University Press &
-                    <p style="font-size: 12px;margin: 0; text-align: center;">Assessment 2025</p>
+                        © 2025 UTC2 Dictionary. All rights reserved.
                     </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="/javascript/main.js"></script>
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/Grammar.js"></script>
 </body>
 
 </html>
-

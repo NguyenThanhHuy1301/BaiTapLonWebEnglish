@@ -175,3 +175,91 @@
     font-size: 16px;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .thesaurus-overview {
+        padding: 30px 25px;
+    }
+
+    .overview-header h1 {
+        font-size: 24px;
+    }
+
+    .overview-header p {
+        font-size: 16px;
+    }
+
+    .popular-articles-card h2 {
+        font-size: 20px;
+    }
+
+    .popular-columns {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .popular-list {
+        width: 100%;
+    }
+
+    .thesaurus-browse {
+        padding: 25px 30px;
+    }
+
+    .thesaurus-browse h2 {
+        font-size: 20px;
+    }
+
+    .thesaurus-key-features {
+        padding: 25px 20px;
+    }
+
+    .thesaurus-key-features h2 {
+        font-size: 22px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .thesaurus-acknowledgements h2 {
+        font-size: 22px;
+    }
+
+    .thesaurus-ack-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thesaurus-overview {
+        padding: 20px 15px;
+    }
+
+    .overview-header h1 {
+        font-size: 20px;
+    }
+
+    .overview-header p {
+        font-size: 14px;
+    }
+
+    .thesaurus-browse {
+        padding: 20px 15px;
+    }
+
+    .thesaurus-browse h2 {
+        font-size: 18px;
+    }
+
+    .thesaurus-key-features h2 {
+        font-size: 20px;
+    }
+
+    .thesaurus-acknowledgements h2 {
+        font-size: 20px;
+    }
+}
+

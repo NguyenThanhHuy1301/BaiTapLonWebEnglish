@@ -1,17 +1,18 @@
-<!-- https://dictionary.cambridge.org/dictionary/ -->
-<!-- Bùi thế khiêm -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/main.css">
-    <link rel="stylesheet" href="../Styles/dictionary.css">
+    <link rel="stylesheet" href="../Styles/user.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>UTC2 Dictionary | English Dictionary Translations & Thesaurus</title>
+    <title>Tài khoản của tôi | UTC2 Dictionary</title>
     <link rel="icon" type="image/png" class="logo" href="../imgage/logo-utc.png">
 </head>
 
@@ -27,12 +28,11 @@
 
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></li>
+                    <li><a href="../Dictionnary/dictionnary.html">Dictionary</a></li>
                     <li><a href="../Translate/translate.html">Translate</a></li>
                     <li><a href="../Grammar/grammar.html">Grammar</a></li>
                     <li><a href="../Exercises/Exercises.html">Exercises</a></li>
                     <li><a href="../Writing/Writing.html">Writing Checker</a></li>
-                
                 </ul>
             </div>
             <div class="nav-right">
@@ -41,43 +41,14 @@
                     <a href="#"><i class="fa-brands fa-instagram fa-xs"></i></a>
                     <a href="#"><i class="fa-brands fa-x-twitter fa-xs"></i></a>
                 </div>
-                <div class="login-signup"><i class="fa-solid fa-user fa-xs"></i><a href="../Auth/auth.html">Log in</a> / <a href="../Auth/auth.html">Sign up</a></div>
+                <div class="login-signup">
+                    <i class="fa-solid fa-user fa-xs"></i>
+                    <a href="#" id="user-profile-link">Tài khoản</a>
+                    <span> / </span>
+                    <a href="#" id="logout-link">Đăng xuất</a>
+                </div>
             </div>
         </nav>
-
-        <!-- Logo Section -->
-        <div class="logo-section">
-            <div class="logo">
-                <a href="../index.html" class="logo-text-link">
-                    <span class="logo-text">UTC2 Dictionary</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Search Bar Section -->
-        <div class="search-section">
-            <div class="search-bar">
-                <input type="search" id="dictionary-search-input" class="search-input" placeholder="Nhập từ cần tra...">
-                <div class="language-select-wrapper">
-                    <select id="dictionary-lang-selector" class="dictionary-lang-select">
-                        <option value="en-vi">Anh - Việt</option>
-                        <option value="vi-en">Việt - Anh</option>
-                        <option value="en-en">Anh - Anh</option>
-                    </select>
-                </div>
-                <div id="dictionary-search-btn" class="dictionary-search-button">
-                    <i class="fa-solid fa-magnifying-glass fa-sm"></i>
-                    <span>Tra từ</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Small Buttons Section -->
-        <div class="button-section dictionary-mode-tabs">
-            <button class="small-btn dict-mode-btn" data-mode="en-vi">ANH-VIỆT</button>
-            <button class="small-btn dict-mode-btn" data-mode="vi-en">VIỆT-ANH</button>
-            <button class="small-btn dict-mode-btn" data-mode="en-en">ANH-ANH</button>
-        </div>
     </header>
 
     <!-- Hamburger menu -->
@@ -90,7 +61,7 @@
                         class="fa-solid fa-x"></i></label>
             </div>
             <div class="menu__child"><a href="../index.html">Home</a></div>
-            <div class="menu__child"><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></div>
+            <div class="menu__child"><a href="../Dictionnary/dictionnary.html">Dictionary</a></div>
             <div class="menu__child"><a href="../Translate/translate.html">Translate</a></div>
             <div class="menu__child"><a href="../Grammar/grammar.html">Grammar</a></div>
             <div class="menu__child"><a href="../Exercises/Exercises.html">Exercises</a></div>
@@ -109,30 +80,71 @@
         <label class="menu-right" for="menu-button"></label>
     </div>
 
-
-    <!-- Main Dictionary Content -->
-    <main class="dictionary-main">
-        <div class="dictionary-container">
-            <!-- Search Result Area -->
-            <div id="dictionary-result" class="dictionary-result">
-                <div class="dictionary-welcome">
-                    <h1>Khám phá UTC2 Dictionary</h1>
-                    <p>Từ điển Anh-Việt trực tuyến miễn phí, tra cứu nhanh chóng và chính xác. Hỗ trợ đa ngôn ngữ với hàng nghìn từ vựng và ví dụ minh họa.</p>
-                    
-                    <div class="dictionary-types">
-                        <div class="dictionary-type-card">
-                            <h2>Định nghĩa tiếng Anh</h2>
-                            <p>Từ điển được xây dựng dựa trên kho ngữ liệu phong phú, phù hợp cho người học tiếng Anh ở mọi trình độ. Lý tưởng cho việc chuẩn bị các kỳ thi tiếng Anh quốc tế.</p>
-                            <div class="dictionary-links">
-                                <a href="#" class="dictionary-link">Từ điển Anh-Việt</a>
-                                <a href="#" class="dictionary-link">Từ điển Việt-Anh</a>
-                                <a href="#" class="dictionary-link">Từ điển Anh-Anh</a>
-                                <a href="#" class="dictionary-link">Từ vựng chuyên ngành</a>
-                            </div>
-                        </div>
+    <!-- Main Content -->
+    <main class="user-main-container">
+        <div class="user-container">
+            <!-- User Profile Section -->
+            <section class="user-profile-section">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-username" id="profile-username">Loading...</h1>
+                        <p class="profile-email" id="profile-email">Loading...</p>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Current Plan Section -->
+            <section class="current-plan-section">
+                <h2 class="section-title">Gói hiện tại của bạn</h2>
+                <div class="plan-card current-plan-card" id="current-plan-card">
+                    <div class="plan-badge trial-badge">
+                        <i class="fa-solid fa-gift"></i>
+                        <span>Trial</span>
+                    </div>
+                    <div class="plan-content">
+                        <h3 class="plan-name">Gói Trial</h3>
+                        <p class="plan-description">Gói miễn phí với các tính năng cơ bản</p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i> Tra cứu từ điển cơ bản</li>
+                            <li><i class="fa-solid fa-check"></i> Dịch văn bản cơ bản</li>
+                            <li><i class="fa-solid fa-check"></i> Truy cập một số bài tập</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRO Plan Section -->
+            <section class="pro-plan-section">
+                <h2 class="section-title">Nâng cấp lên PRO</h2>
+                <div class="plan-card pro-plan-card">
+                    <div class="plan-badge pro-badge">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>PRO</span>
+                    </div>
+                    <div class="plan-content">
+                        <h3 class="plan-name">Gói PRO</h3>
+                        <p class="plan-description">Trải nghiệm đầy đủ với tốc độ nhanh và nhiều tính năng hơn</p>
+                        <ul class="plan-features pro-features">
+                            <li><i class="fa-solid fa-bolt"></i> Tăng tốc độ dịch nhanh hơn 3x</li>
+                            <li><i class="fa-solid fa-rocket"></i> Tăng tốc độ tra cứu nhanh hơn 3x</li>
+                            <li><i class="fa-solid fa-unlock"></i> Mở khóa tất cả bài tập</li>
+                            <li><i class="fa-solid fa-infinity"></i> Không giới hạn số lần sử dụng</li>
+                            <li><i class="fa-solid fa-headset"></i> Hỗ trợ ưu tiên 24/7</li>
+                        </ul>
+                        <div class="plan-price">
+                            <span class="price-amount">299.000đ</span>
+                            <span class="price-period">/tháng</span>
+                        </div>
+                        <button class="upgrade-btn" id="upgrade-btn">
+                            <i class="fa-solid fa-crown"></i>
+                            Nâng cấp ngay
+                        </button>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -145,7 +157,7 @@
                         <li><a href="../Dictionnary/dictionnary.html">Từ điển Anh-Việt</a></li>
                         <li><a href="../Translate/translate.html">Dịch văn bản</a></li>
                         <li><a href="../Grammar/grammar.html">Ngữ pháp</a></li>
-                        <li><a href="../Thesaurus/thesaurus.html">Từ đồng nghĩa</a></li>
+                        <li><a href="../Exercises/Exercises.html">Bài tập</a></li>
                         <li><a href="../Game/game.html">Trò chơi</a></li>
                     </ul>
                 </div>
@@ -153,9 +165,9 @@
                 <div class="footer-col">
                     <a href="#" class="footer-header">HỌC TẬP</a>
                     <ul>
-                        <li><a href="../Cambridge/vocabulary.html">Từ vựng</a></li>
+                        <li><a href="#">Từ vựng</a></li>
                         <li><a href="#">Từ mới</a></li>
-                        <li><a href="#">Bài tập</a></li>
+                        <li><a href="../Exercises/Exercises.html">Bài tập</a></li>
                         <li><a href="#">Hướng dẫn</a></li>
                     </ul>
                 </div>
@@ -193,7 +205,8 @@
     </footer>
 
     <script src="../javascript/main.js"></script>
-    <script src="../javascript/dictionary.js"></script>
+    <script src="../javascript/user.js"></script>
 </body>
 
 </html>
+

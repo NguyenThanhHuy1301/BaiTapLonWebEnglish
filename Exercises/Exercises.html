@@ -1,17 +1,18 @@
-<!-- https://dictionary.cambridge.org/dictionary/ -->
-<!-- Bùi thế khiêm -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/main.css">
-    <link rel="stylesheet" href="../Styles/dictionary.css">
+    <link rel="stylesheet" href="../Styles/Exercises.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>UTC2 Dictionary | English Dictionary Translations & Thesaurus</title>
+    <title>UTC2 Exercises | Bài Tập Tiếng Anh</title>
     <link rel="icon" type="image/png" class="logo" href="../imgage/logo-utc.png">
 </head>
 
@@ -27,12 +28,11 @@
 
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></li>
+                    <li><a href="../Dictionnary/dictionnary.html">Dictionary</a></li>
                     <li><a href="../Translate/translate.html">Translate</a></li>
                     <li><a href="../Grammar/grammar.html">Grammar</a></li>
-                    <li><a href="../Exercises/Exercises.html">Exercises</a></li>
+                    <li><a href="Exercises.html" class="active">Exercises</a></li>
                     <li><a href="../Writing/Writing.html">Writing Checker</a></li>
-                
                 </ul>
             </div>
             <div class="nav-right">
@@ -47,36 +47,17 @@
 
         <!-- Logo Section -->
         <div class="logo-section">
-            <div class="logo">
-                <a href="../index.html" class="logo-text-link">
-                    <span class="logo-text">UTC2 Dictionary</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Search Bar Section -->
-        <div class="search-section">
-            <div class="search-bar">
-                <input type="search" id="dictionary-search-input" class="search-input" placeholder="Nhập từ cần tra...">
-                <div class="language-select-wrapper">
-                    <select id="dictionary-lang-selector" class="dictionary-lang-select">
-                        <option value="en-vi">Anh - Việt</option>
-                        <option value="vi-en">Việt - Anh</option>
-                        <option value="en-en">Anh - Anh</option>
-                    </select>
+            <div class="logo-wrapper">
+                <div class="logo-image-wrapper">
+                    <img src="../imgage/logo-utc.png" alt="UTC Logo" class="logo-image">
                 </div>
-                <div id="dictionary-search-btn" class="dictionary-search-button">
-                    <i class="fa-solid fa-magnifying-glass fa-sm"></i>
-                    <span>Tra từ</span>
+                <div class="logo-content">
+                    <a href="../index.html" class="logo-text-link">
+                        <h1 class="logo-text">UTC2 Exercises</h1>
+                    </a>
+                    <p class="logo-subtitle">Làm bài tập từ vựng, ngữ pháp, đọc hiểu và nghe để luyện tiếng Anh mỗi ngày.</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Small Buttons Section -->
-        <div class="button-section dictionary-mode-tabs">
-            <button class="small-btn dict-mode-btn" data-mode="en-vi">ANH-VIỆT</button>
-            <button class="small-btn dict-mode-btn" data-mode="vi-en">VIỆT-ANH</button>
-            <button class="small-btn dict-mode-btn" data-mode="en-en">ANH-ANH</button>
         </div>
     </header>
 
@@ -90,10 +71,10 @@
                         class="fa-solid fa-x"></i></label>
             </div>
             <div class="menu__child"><a href="../index.html">Home</a></div>
-            <div class="menu__child"><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></div>
+            <div class="menu__child"><a href="../Dictionnary/dictionnary.html">Dictionary</a></div>
             <div class="menu__child"><a href="../Translate/translate.html">Translate</a></div>
             <div class="menu__child"><a href="../Grammar/grammar.html">Grammar</a></div>
-            <div class="menu__child"><a href="../Exercises/Exercises.html">Exercises</a></div>
+            <div class="menu__child"><a href="Exercises.html" class="active">Exercises</a></div>
             <div class="menu__child"><a href="../Writing/Writing.html">Writing Checker</a></div>
             <div class="menu__child"><a href="../Game/game.html">Games</a></div>
             <div class="menu__child">
@@ -109,28 +90,51 @@
         <label class="menu-right" for="menu-button"></label>
     </div>
 
+    <!-- Control Bar Section -->
+    <section class="exercises-control-bar">
+        <div class="exercises-control-wrapper">
+            <div class="exercises-search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="exercises-search-input" class="exercises-search-input" 
+                       placeholder="Tìm bài tập theo chủ đề, từ vựng, ngữ pháp…">
+            </div>
+            <div class="exercises-filters">
+                <select id="exercises-skill-filter" class="exercises-filter-select">
+                    <option value="all">All skills</option>
+                    <option value="vocabulary">Vocabulary</option>
+                    <option value="grammar">Grammar</option>
+                    <option value="reading">Reading</option>
+                    <option value="listening">Listening</option>
+                </select>
+                <select id="exercises-level-filter" class="exercises-filter-select">
+                    <option value="all">All levels</option>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                </select>
+                <button id="exercises-random-btn" class="exercises-random-btn">
+                    <i class="fa-solid fa-shuffle"></i>
+                    Làm bài ngẫu nhiên
+                </button>
+            </div>
+        </div>
+    </section>
 
-    <!-- Main Dictionary Content -->
-    <main class="dictionary-main">
-        <div class="dictionary-container">
-            <!-- Search Result Area -->
-            <div id="dictionary-result" class="dictionary-result">
-                <div class="dictionary-welcome">
-                    <h1>Khám phá UTC2 Dictionary</h1>
-                    <p>Từ điển Anh-Việt trực tuyến miễn phí, tra cứu nhanh chóng và chính xác. Hỗ trợ đa ngôn ngữ với hàng nghìn từ vựng và ví dụ minh họa.</p>
-                    
-                    <div class="dictionary-types">
-                        <div class="dictionary-type-card">
-                            <h2>Định nghĩa tiếng Anh</h2>
-                            <p>Từ điển được xây dựng dựa trên kho ngữ liệu phong phú, phù hợp cho người học tiếng Anh ở mọi trình độ. Lý tưởng cho việc chuẩn bị các kỳ thi tiếng Anh quốc tế.</p>
-                            <div class="dictionary-links">
-                                <a href="#" class="dictionary-link">Từ điển Anh-Việt</a>
-                                <a href="#" class="dictionary-link">Từ điển Việt-Anh</a>
-                                <a href="#" class="dictionary-link">Từ điển Anh-Anh</a>
-                                <a href="#" class="dictionary-link">Từ vựng chuyên ngành</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Main Content Section -->
+    <main class="exercises-main-container">
+        <div class="exercises-content-wrapper">
+            <!-- Exercise Cards Grid -->
+            <div class="exercises-cards-grid" id="exercises-cards-container">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+
+            <!-- Exercise Panel -->
+            <div class="exercises-panel" id="exercises-panel">
+                <div class="exercises-panel-placeholder">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <p>Chọn một bài tập để bắt đầu làm bài</p>
                 </div>
             </div>
         </div>
@@ -145,7 +149,7 @@
                         <li><a href="../Dictionnary/dictionnary.html">Từ điển Anh-Việt</a></li>
                         <li><a href="../Translate/translate.html">Dịch văn bản</a></li>
                         <li><a href="../Grammar/grammar.html">Ngữ pháp</a></li>
-                        <li><a href="../Thesaurus/thesaurus.html">Từ đồng nghĩa</a></li>
+                        <li><a href="Exercises.html">Bài tập</a></li>
                         <li><a href="../Game/game.html">Trò chơi</a></li>
                     </ul>
                 </div>
@@ -155,7 +159,7 @@
                     <ul>
                         <li><a href="../Cambridge/vocabulary.html">Từ vựng</a></li>
                         <li><a href="#">Từ mới</a></li>
-                        <li><a href="#">Bài tập</a></li>
+                        <li><a href="Exercises.html">Bài tập</a></li>
                         <li><a href="#">Hướng dẫn</a></li>
                     </ul>
                 </div>
@@ -193,7 +197,8 @@
     </footer>
 
     <script src="../javascript/main.js"></script>
-    <script src="../javascript/dictionary.js"></script>
+    <script src="../javascript/Exercises.js" defer></script>
 </body>
 
 </html>
+

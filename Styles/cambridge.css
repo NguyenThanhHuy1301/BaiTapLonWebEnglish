@@ -474,4 +474,75 @@
     }
 }
 
+@media (max-width: 768px) {
+    .cambridge-main {
+        margin: 30px auto 50px;
+        padding: 0 15px;
+    }
+
+    .cambridge-hero {
+        padding: 30px 25px;
+    }
+
+    .cambridge-hero-title {
+        font-size: 28px;
+    }
+
+    .cambridge-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .cambridge-content-wrapper {
+        gap: 20px;
+    }
+
+    .cambridge-side-widget,
+    .cambridge-side-widget-word {
+        width: 100%;
+    }
+
+    .cambridge-ad-banner {
+        padding: 18px 20px;
+    }
+
+    .cambridge-ad-title {
+        font-size: 16px;
+    }
+
+    .cambridge-ad-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cambridge-main {
+        margin: 20px auto 40px;
+        padding: 0 10px;
+    }
+
+    .cambridge-hero {
+        padding: 20px 15px;
+    }
+
+    .cambridge-hero-title {
+        font-size: 24px;
+    }
+
+    .cambridge-hero-subtitle {
+        font-size: 14px;
+    }
+
+    .cambridge-ad-banner {
+        padding: 15px 18px;
+    }
+
+    .cambridge-ad-title {
+        font-size: 14px;
+    }
+
+    .cambridge-ad-text {
+        font-size: 12px;
+    }
+}
+
 
