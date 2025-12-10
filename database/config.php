@@ -43,5 +43,54 @@ function sendJSONResponse($success, $message, $data = null) {
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
     exit;
 }
+
+// Secret key để mã hóa session token (nên thay đổi trong production)
+define('SESSION_SECRET_KEY', 'utc2_dictionary_secret_key_2025');
+
+// Tạo session token từ user_id (không cần database)
+function createSessionToken($userId) {
+    $timestamp = time();
+    $expiresAt = $timestamp + (7 * 24 * 60 * 60); // 7 ngày
+    $data = $userId . '|' . $expiresAt;
+    $signature = hash_hmac('sha256', $data, SESSION_SECRET_KEY);
+    $token = base64_encode($data . '|' . $signature);
+    return $token;
+}
+
+// Verify và lấy user_id từ session token
+function verifySessionToken($token) {
+    try {
+        $decoded = base64_decode($token);
+        if ($decoded === false) {
+            return null;
+        }
+        
+        $parts = explode('|', $decoded);
+        if (count($parts) !== 3) {
+            return null;
+        }
+        
+        $userId = $parts[0];
+        $expiresAt = $parts[1];
+        $signature = $parts[2];
+        
+        // Verify signature
+        $data = $userId . '|' . $expiresAt;
+        $expectedSignature = hash_hmac('sha256', $data, SESSION_SECRET_KEY);
+        
+        if (!hash_equals($expectedSignature, $signature)) {
+            return null; // Invalid signature
+        }
+        
+        // Check expiration
+        if ($expiresAt < time()) {
+            return null; // Token expired
+        }
+        
+        return (int)$userId;
+    } catch (Exception $e) {
+        return null;
+    }
+}
 ?>
 

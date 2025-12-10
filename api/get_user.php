@@ -1,19 +1,24 @@
 <?php
 require_once '../database/config.php';
 
-// Chỉ chấp nhận GET request
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    sendJSONResponse(false, 'Method not allowed');
-}
-
-// Lấy session token từ header hoặc query parameter
+// Chấp nhận cả GET và POST request
 $sessionToken = null;
-if (isset($_GET['session_token'])) {
-    $sessionToken = trim($_GET['session_token']);
-} elseif (isset($_SERVER['HTTP_AUTHORIZATION'])) {
-    $authHeader = $_SERVER['HTTP_AUTHORIZATION'];
-    if (preg_match('/Bearer\s+(.*)$/i', $authHeader, $matches)) {
-        $sessionToken = $matches[1];
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    // Lấy session token từ query parameter
+    if (isset($_GET['session_token'])) {
+        $sessionToken = trim($_GET['session_token']);
+    } elseif (isset($_SERVER['HTTP_AUTHORIZATION'])) {
+        $authHeader = $_SERVER['HTTP_AUTHORIZATION'];
+        if (preg_match('/Bearer\s+(.*)$/i', $authHeader, $matches)) {
+            $sessionToken = $matches[1];
+        }
+    }
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Lấy session token từ POST body
+    $data = json_decode(file_get_contents('php://input'), true);
+    if (isset($data['session_token'])) {
+        $sessionToken = trim($data['session_token']);
     }
 }
 
@@ -22,20 +27,14 @@ if (empty($sessionToken)) {
 }
 
 try {
-    $conn = getDBConnection();
+    // Verify session token và lấy user_id
+    $userId = verifySessionToken($sessionToken);
     
-    // Tìm session trong database
-    $stmt = $conn->prepare("SELECT user_id, expires_at FROM user_sessions WHERE session_token = ? AND expires_at > NOW()");
-    $stmt->bind_param("s", $sessionToken);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows === 0) {
+    if ($userId === null) {
         sendJSONResponse(false, 'Session không hợp lệ hoặc đã hết hạn!');
     }
     
-    $session = $result->fetch_assoc();
-    $userId = $session['user_id'];
+    $conn = getDBConnection();
     
     // Lấy thông tin user
     $stmt = $conn->prepare("SELECT id, username, email, plan, created_at FROM users WHERE id = ?");

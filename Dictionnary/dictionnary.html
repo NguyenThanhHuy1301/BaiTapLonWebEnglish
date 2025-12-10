@@ -95,7 +95,6 @@
             <div class="menu__child"><a href="../Grammar/grammar.html">Grammar</a></div>
             <div class="menu__child"><a href="../Exercises/Exercises.html">Exercises</a></div>
             <div class="menu__child"><a href="../Writing/Writing.html">Writing Checker</a></div>
-            <div class="menu__child"><a href="../Game/game.html">Games</a></div>
             <div class="menu__child">
                 <div class="social-icons">
                     <div>Follow us</div>
@@ -116,19 +115,27 @@
             <!-- Search Result Area -->
             <div id="dictionary-result" class="dictionary-result">
                 <div class="dictionary-welcome">
-                    <h1>Khám phá UTC2 Dictionary</h1>
-                    <p>Từ điển Anh-Việt trực tuyến miễn phí, tra cứu nhanh chóng và chính xác. Hỗ trợ đa ngôn ngữ với hàng nghìn từ vựng và ví dụ minh họa.</p>
+                    <h1 class="dictionary-welcome-title">Tra cứu từ điển Anh-Việt</h1>
+                    <p class="dictionary-welcome-subtitle">Chọn chế độ tra cứu và nhập từ cần tra vào ô tìm kiếm.</p>
                     
-                    <div class="dictionary-types">
-                        <div class="dictionary-type-card">
-                            <h2>Định nghĩa tiếng Anh</h2>
-                            <p>Từ điển được xây dựng dựa trên kho ngữ liệu phong phú, phù hợp cho người học tiếng Anh ở mọi trình độ. Lý tưởng cho việc chuẩn bị các kỳ thi tiếng Anh quốc tế.</p>
-                            <div class="dictionary-links">
-                                <a href="#" class="dictionary-link">Từ điển Anh-Việt</a>
-                                <a href="#" class="dictionary-link">Từ điển Việt-Anh</a>
-                                <a href="#" class="dictionary-link">Từ điển Anh-Anh</a>
-                                <a href="#" class="dictionary-link">Từ vựng chuyên ngành</a>
-                            </div>
+                    <div class="dictionary-mode-card">
+                        <h2 class="dictionary-mode-card-title">Chế độ tra cứu</h2>
+                        <p class="dictionary-mode-card-description">Từ điển hỗ trợ tra cứu 2 chiều: từ tiếng Anh sang tiếng Việt và ngược lại.</p>
+                        <p class="dictionary-mode-card-description">Bạn có thể chọn chế độ phù hợp với nhu cầu của mình.</p>
+                        
+                        <div class="dictionary-mode-options">
+                            <button class="dictionary-mode-option" data-mode="en-vi">
+                                <span class="mode-arrow">→</span>
+                                <span class="mode-text">Anh - Việt</span>
+                            </button>
+                            <button class="dictionary-mode-option" data-mode="vi-en">
+                                <span class="mode-arrow">→</span>
+                                <span class="mode-text">Việt - Anh</span>
+                            </button>
+                            <button class="dictionary-mode-option" data-mode="en-en">
+                                <span class="mode-arrow">→</span>
+                                <span class="mode-text">Anh - Anh</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -146,7 +153,6 @@
                         <li><a href="../Translate/translate.html">Dịch văn bản</a></li>
                         <li><a href="../Grammar/grammar.html">Ngữ pháp</a></li>
                         <li><a href="../Thesaurus/thesaurus.html">Từ đồng nghĩa</a></li>
-                        <li><a href="../Game/game.html">Trò chơi</a></li>
                     </ul>
                 </div>
 
@@ -193,6 +199,7 @@
     </footer>
 
     <script src="../javascript/main.js"></script>
+    <script src="../javascript/auth-status.js"></script>
     <script src="../javascript/dictionary.js"></script>
 </body>
 

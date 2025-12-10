@@ -28,6 +28,10 @@ async function loadUserInfo() {
     
     if (!sessionToken) {
         console.error('Session token not found');
+        // Hide loading and show error
+        hideLoading();
+        alert('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
+        window.location.href = '../Auth/auth.html';
         return;
     }
     
@@ -59,6 +63,9 @@ async function loadUserInfo() {
                 plan: user.plan
             }));
             
+            // Hide loading
+            hideLoading();
+            
             // Update plan display
             updatePlanDisplay(user.plan || 'trial');
         } else {
@@ -66,8 +73,21 @@ async function loadUserInfo() {
             const userStr = localStorage.getItem('user');
             if (userStr) {
                 const user = JSON.parse(userStr);
+                hideLoading();
+                
+                // Update username and email from localStorage
+                const usernameElement = document.getElementById('profile-username');
+                const emailElement = document.getElementById('profile-email');
+                if (usernameElement) {
+                    usernameElement.textContent = user.username || 'User';
+                }
+                if (emailElement) {
+                    emailElement.textContent = user.email || '';
+                }
+                
                 updatePlanDisplay(user.plan || 'trial');
             } else {
+                hideLoading();
                 alert('Không thể tải thông tin người dùng. Vui lòng đăng nhập lại.');
                 window.location.href = '../Auth/auth.html';
             }
@@ -78,8 +98,38 @@ async function loadUserInfo() {
         const userStr = localStorage.getItem('user');
         if (userStr) {
             const user = JSON.parse(userStr);
+            hideLoading();
+            
+            // Update username and email from localStorage
+            const usernameElement = document.getElementById('profile-username');
+            const emailElement = document.getElementById('profile-email');
+            if (usernameElement) {
+                usernameElement.textContent = user.username || 'User';
+            }
+            if (emailElement) {
+                emailElement.textContent = user.email || '';
+            }
+            
             updatePlanDisplay(user.plan || 'trial');
+        } else {
+            hideLoading();
+            alert('Có lỗi xảy ra khi tải thông tin. Vui lòng đăng nhập lại.');
+            window.location.href = '../Auth/auth.html';
         }
+    }
+}
+
+// Hide loading state
+function hideLoading() {
+    const usernameElement = document.getElementById('profile-username');
+    const emailElement = document.getElementById('profile-email');
+    
+    // Remove loading class if exists
+    if (usernameElement && usernameElement.textContent === 'Loading...') {
+        // Already handled by setting textContent
+    }
+    if (emailElement && emailElement.textContent === 'Loading...') {
+        // Already handled by setting textContent
     }
 }
 
@@ -131,10 +181,19 @@ function updatePlanDisplay(plan) {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Logout link
+    // Logout link in header
     const logoutLink = document.getElementById('logout-link');
     if (logoutLink) {
         logoutLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleLogout();
+        });
+    }
+    
+    // Logout button in main content
+    const logoutBtnMain = document.getElementById('logout-btn-main');
+    if (logoutBtnMain) {
+        logoutBtnMain.addEventListener('click', function(e) {
             e.preventDefault();
             handleLogout();
         });
@@ -168,7 +227,15 @@ function handleLogout() {
         localStorage.removeItem('user_plan');
         
         // Redirect to home page
-        window.location.href = '../index.html';
+        const currentPath = window.location.pathname;
+        let homePath = '../index.html';
+        
+        // Nếu đang ở thư mục gốc
+        if (currentPath.includes('index.html') || currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+            homePath = './index.html';
+        }
+        
+        window.location.href = homePath;
     }
 }
 

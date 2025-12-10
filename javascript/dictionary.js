@@ -642,22 +642,53 @@ document.addEventListener('DOMContentLoaded', function() {
     function showWelcome() {
         resultContainer.innerHTML = `
             <div class="dictionary-welcome">
-                <h1>Tra cứu từ điển Anh-Việt</h1>
-                <p>Chọn chế độ tra cứu và nhập từ cần tra vào ô tìm kiếm.</p>
+                <h1 class="dictionary-welcome-title">Tra cứu từ điển Anh-Việt</h1>
+                <p class="dictionary-welcome-subtitle">Chọn chế độ tra cứu và nhập từ cần tra vào ô tìm kiếm.</p>
                 
-                <div class="dictionary-types">
-                    <div class="dictionary-type-card">
-                        <h2>Chế độ tra cứu</h2>
-                        <p>Từ điển hỗ trợ tra cứu 2 chiều: từ tiếng Anh sang tiếng Việt và ngược lại. Bạn có thể chọn chế độ phù hợp với nhu cầu của mình.</p>
-                        <div class="dictionary-links">
-                            <a href="#" class="dictionary-link">Anh - Việt</a>
-                            <a href="#" class="dictionary-link">Việt - Anh</a>
-                            <a href="#" class="dictionary-link">Anh - Anh</a>
-                        </div>
+                <div class="dictionary-mode-card">
+                    <h2 class="dictionary-mode-card-title">Chế độ tra cứu</h2>
+                    <p class="dictionary-mode-card-description">Từ điển hỗ trợ tra cứu 2 chiều: từ tiếng Anh sang tiếng Việt và ngược lại.</p>
+                    <p class="dictionary-mode-card-description">Bạn có thể chọn chế độ phù hợp với nhu cầu của mình.</p>
+                    
+                    <div class="dictionary-mode-options">
+                        <button class="dictionary-mode-option" data-mode="en-vi">
+                            <span class="mode-arrow">→</span>
+                            <span class="mode-text">Anh - Việt</span>
+                        </button>
+                        <button class="dictionary-mode-option" data-mode="vi-en">
+                            <span class="mode-arrow">→</span>
+                            <span class="mode-text">Việt - Anh</span>
+                        </button>
+                        <button class="dictionary-mode-option" data-mode="en-en">
+                            <span class="mode-arrow">→</span>
+                            <span class="mode-text">Anh - Anh</span>
+                        </button>
                     </div>
                 </div>
             </div>
         `;
+        
+        // Add event listeners to mode option buttons
+        const modeOptionButtons = resultContainer.querySelectorAll('.dictionary-mode-option');
+        modeOptionButtons.forEach(btn => {
+            // Set active state based on current mode
+            if (btn.dataset.mode === dictionaryMode) {
+                btn.classList.add('active');
+            }
+            
+            btn.addEventListener('click', function() {
+                dictionaryMode = this.dataset.mode;
+                if (langSelector) {
+                    langSelector.value = dictionaryMode;
+                }
+                updatePlaceholder();
+                setActiveModeButton();
+                
+                // Update active state in welcome screen
+                modeOptionButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
     }
     
     // Function to play audio

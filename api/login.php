@@ -42,14 +42,8 @@ try {
         sendJSONResponse(false, 'Email/tên đăng nhập hoặc mật khẩu không đúng!');
     }
     
-    // Tạo session token (optional - có thể dùng để quản lý session)
-    $sessionToken = bin2hex(random_bytes(32));
-    $expiresAt = date('Y-m-d H:i:s', strtotime('+7 days'));
-    
-    // Lưu session vào database (optional)
-    $stmt = $conn->prepare("INSERT INTO user_sessions (user_id, session_token, expires_at) VALUES (?, ?, ?)");
-    $stmt->bind_param("iss", $user['id'], $sessionToken, $expiresAt);
-    $stmt->execute();
+    // Tạo session token (không cần lưu vào database)
+    $sessionToken = createSessionToken($user['id']);
     
     // Trả về thông tin user (không trả về password)
     sendJSONResponse(true, 'Đăng nhập thành công!', [

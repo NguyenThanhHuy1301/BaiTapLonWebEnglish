@@ -23,20 +23,14 @@ if (!in_array($plan, ['trial', 'pro'])) {
 }
 
 try {
-    $conn = getDBConnection();
+    // Verify session token và lấy user_id
+    $userId = verifySessionToken($sessionToken);
     
-    // Tìm session trong database
-    $stmt = $conn->prepare("SELECT user_id, expires_at FROM user_sessions WHERE session_token = ? AND expires_at > NOW()");
-    $stmt->bind_param("s", $sessionToken);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows === 0) {
+    if ($userId === null) {
         sendJSONResponse(false, 'Session không hợp lệ hoặc đã hết hạn!');
     }
     
-    $session = $result->fetch_assoc();
-    $userId = $session['user_id'];
+    $conn = getDBConnection();
     
     // Cập nhật plan của user
     $stmt = $conn->prepare("UPDATE users SET plan = ? WHERE id = ?");
