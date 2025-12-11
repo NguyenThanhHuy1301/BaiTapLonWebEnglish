@@ -1,9 +1,27 @@
 // Auth Status Management - Quản lý trạng thái đăng nhập trên tất cả các trang
 
 // Kiểm tra và cập nhật trạng thái đăng nhập khi trang load
-document.addEventListener('DOMContentLoaded', function() {
-    updateAuthStatus();
-});
+(function() {
+    function initAuthStatus() {
+        updateAuthStatus();
+    }
+    
+    // Chạy khi DOM sẵn sàng
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Đợi một chút để đảm bảo các script khác đã chạy xong
+            setTimeout(initAuthStatus, 200);
+        });
+    } else {
+        // DOM đã sẵn sàng, chạy sau một chút
+        setTimeout(initAuthStatus, 200);
+    }
+    
+    // Cũng chạy khi window load hoàn tất
+    window.addEventListener('load', function() {
+        setTimeout(updateAuthStatus, 100);
+    });
+})();
 
 // Hàm kiểm tra trạng thái đăng nhập
 function isLoggedIn() {
@@ -27,11 +45,11 @@ function updateAuthStatus() {
         
         // Xác định đường dẫn đến user.html dựa trên vị trí hiện tại
         const currentPath = window.location.pathname;
+        const currentFile = window.location.pathname.split('/').pop();
         let userPagePath = '../Auth/user.html';
         
-        // Nếu đang ở thư mục gốc (index.html) hoặc không có thư mục con
-        if (currentPath.endsWith('index.html') || currentPath.endsWith('/') || 
-            currentPath.split('/').filter(p => p && !p.includes('.html')).length === 0) {
+        // Nếu đang ở thư mục gốc (index.html)
+        if (currentFile === 'index.html' || currentFile === '' || currentPath.endsWith('/')) {
             userPagePath = './Auth/user.html';
         }
         
@@ -61,11 +79,11 @@ function updateAuthStatus() {
     } else {
         // Người dùng chưa đăng nhập - hiển thị "Log in / Sign up"
         const currentPath = window.location.pathname;
+        const currentFile = window.location.pathname.split('/').pop();
         let authPagePath = '../Auth/auth.html';
         
-        // Nếu đang ở thư mục gốc (index.html) hoặc không có thư mục con
-        if (currentPath.endsWith('index.html') || currentPath.endsWith('/') || 
-            currentPath.split('/').filter(p => p && !p.includes('.html')).length === 0) {
+        // Nếu đang ở thư mục gốc (index.html)
+        if (currentFile === 'index.html' || currentFile === '' || currentPath.endsWith('/')) {
             authPagePath = './Auth/auth.html';
         }
         

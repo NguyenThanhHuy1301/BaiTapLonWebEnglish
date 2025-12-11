@@ -158,52 +158,152 @@ if (swapBtn && fromLangBtn && toLangBtn && inputEl && outputEl) {
     });
 }
 
-// Translate using MyMemory API (free, fast, no API key required)
+// Translate using multiple free APIs with fallback chain for best accuracy
 async function translateText(text, from, to) {
-    try {
-        // MyMemory Translation API - free and fast
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
-        
-        const response = await fetch(url);
-        
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+    if (!text || text.trim() === '') {
+        return '';
+    }
 
-        const data = await response.json();
-        
-        if (data.responseStatus === 200 && data.responseData) {
-            return data.responseData.translatedText || '';
-        } else {
-            throw new Error(data.responseStatus || 'Translation failed');
+    // Normalize language codes for different APIs
+    const normalizeLangCode = (code) => {
+        const langMap = {
+            'zh': 'zh',  // Keep as is for most APIs
+        };
+        return langMap[code] || code;
+    };
+
+    const normalizedFrom = normalizeLangCode(from);
+    const normalizedTo = normalizeLangCode(to);
+
+    // Helper function to add timeout to fetch
+    const fetchWithTimeout = (url, options, timeout = 5000) => {
+        return Promise.race([
+            fetch(url, options),
+            new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Request timeout')), timeout)
+            )
+        ]);
+    };
+
+    // Method 1: Try LibreTranslate first (most accurate free API)
+    try {
+        const response = await fetchWithTimeout('https://libretranslate.de/translate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                q: text,
+                source: normalizedFrom,
+                target: normalizedTo,
+                format: 'text'
+            })
+        }, 5000);
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.translatedText && data.translatedText.trim() !== '') {
+                return data.translatedText;
+            }
         }
     } catch (err) {
-        console.error('Translation error:', err);
-        // Fallback: try LibreTranslate
-        try {
-            const response = await fetch('https://libretranslate.com/translate', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    q: text,
-                    source: from,
-                    target: to,
-                    format: 'text'
-                })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                return data.translatedText || '';
-            }
-        } catch (fallbackErr) {
-            console.error('Fallback translation error:', fallbackErr);
-        }
-        
-        return `[Lỗi dịch: ${err.message}]`;
+        console.log('LibreTranslate attempt failed, trying next API...');
     }
+
+    // Method 2: Try MyMemory Translation API (backup)
+    try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${normalizedFrom}|${normalizedTo}`;
+        const response = await fetchWithTimeout(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        }, 5000);
+        
+        if (response.ok) {
+            const data = await response.json();
+            if (data.responseStatus === 200 && data.responseData && data.responseData.translatedText) {
+                const translated = data.responseData.translatedText.trim();
+                if (translated && translated !== text) {
+                    return translated;
+                }
+            }
+        }
+    } catch (err) {
+        console.log('MyMemory attempt failed, trying next API...');
+    }
+
+    // Method 3: Try Google Translate via alternative endpoint (free, no key)
+    try {
+        // Using a public Google Translate API endpoint
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${normalizedFrom}&tl=${normalizedTo}&dt=t&q=${encodeURIComponent(text)}`;
+        const response = await fetchWithTimeout(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        }, 5000);
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data && data[0] && Array.isArray(data[0])) {
+                let translated = '';
+                data[0].forEach(item => {
+                    if (item && item[0]) {
+                        translated += item[0];
+                    }
+                });
+                if (translated.trim() && translated.trim() !== text.trim()) {
+                    return translated.trim();
+                }
+            }
+        }
+    } catch (err) {
+        console.log('Google Translate attempt failed, trying next API...');
+    }
+
+    // Method 4: Try another LibreTranslate instance
+    try {
+        const response = await fetchWithTimeout('https://translate.argosopentech.com/translate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                q: text,
+                source: normalizedFrom,
+                target: normalizedTo,
+                format: 'text'
+            })
+        }, 5000);
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.translatedText && data.translatedText.trim() !== '') {
+                return data.translatedText;
+            }
+        }
+    } catch (err) {
+        console.log('Alternative LibreTranslate attempt failed...');
+    }
+
+    // Method 5: Final fallback - Try MyMemory with better error handling
+    try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${normalizedFrom}|${normalizedTo}`;
+        const response = await fetchWithTimeout(url, {}, 5000);
+        
+        if (response.ok) {
+            const data = await response.json();
+            if (data.responseData && data.responseData.translatedText) {
+                return data.responseData.translatedText;
+            }
+        }
+    } catch (err) {
+        console.error('All translation APIs failed');
+    }
+    
+    // If all methods fail, return error message
+    throw new Error('Không thể dịch văn bản. Vui lòng thử lại sau.');
 }
 
 // Handle Translate button
@@ -233,15 +333,19 @@ if (translateBtn && inputEl && outputEl && fromLangBtn && toLangBtn) {
 
         try {
             const result = await translateText(text, from, to);
-            outputEl.textContent = result;
-            outputEl.classList.remove('loading', 'error');
+            if (result && result.trim()) {
+                outputEl.textContent = result;
+                outputEl.classList.remove('loading', 'error');
+            } else {
+                throw new Error('Kết quả dịch trống');
+            }
         } catch (err) {
-            outputEl.textContent = `Lỗi: Không thể dịch văn bản. Vui lòng thử lại.`;
+            outputEl.textContent = `Lỗi: ${err.message || 'Không thể dịch văn bản. Vui lòng thử lại.'}`;
             outputEl.classList.remove('loading');
             outputEl.classList.add('error');
         } finally {
             translateBtn.disabled = false;
-            translateBtn.innerHTML = 'Translate';
+            translateBtn.innerHTML = '<i class="fa-solid fa-language"></i> Translate';
         }
     });
 }

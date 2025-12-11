@@ -3,8 +3,8 @@
 // BẠN CẦN SỬA CÁC THÔNG TIN SAU THEO DATABASE BẠN ĐÃ TẠO TRONG AAPANEL:
 
 define('DB_HOST', 'localhost');        // Thường là localhost hoặc 127.0.0.1
-define('DB_USER', 'root');             // Tên user database bạn đã tạo trong aaPanel
-define('DB_PASS', '');                 // Mật khẩu database bạn đã tạo trong aaPanel
+define('DB_USER', 'utc2_dictionary');             // Tên user database bạn đã tạo trong aaPanel
+define('DB_PASS', 'utc2_dictionary');                 // Mật khẩu database bạn đã tạo trong aaPanel
 define('DB_NAME', 'utc2_dictionary');  // TÊN DATABASE BẠN ĐÃ TẠO TRONG AAPANEL (tự đặt tên)
 
 // Kết nối database

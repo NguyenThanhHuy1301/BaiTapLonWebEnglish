@@ -1,17 +1,18 @@
-<!-- https://dictionary.cambridge.org/dictionary/ -->
-<!-- Bùi thế khiêm -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/main.css">
-    <link rel="stylesheet" href="../Styles/dictionary.css">
+    <link rel="stylesheet" href="../Styles/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>UTC2 Dictionary | English Dictionary Translations & Thesaurus</title>
+    <title>Liên hệ | UTC2 Dictionary</title>
     <link rel="icon" type="image/png" class="logo" href="../imgage/logo-utc.png">
 </head>
 
@@ -27,12 +28,11 @@
 
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></li>
+                    <li><a href="../Dictionnary/dictionnary.html">Dictionary</a></li>
                     <li><a href="../Translate/translate.html">Translate</a></li>
                     <li><a href="../Grammar/grammar.html">Grammar</a></li>
                     <li><a href="../Exercises/Exercises.html">Exercises</a></li>
                     <li><a href="../Writing/Writing.html">Writing Checker</a></li>
-                    <li><a href="../Contact/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -47,36 +47,17 @@
 
         <!-- Logo Section -->
         <div class="logo-section">
-            <div class="logo">
-                <a href="../index.html" class="logo-text-link">
-                    <span class="logo-text">UTC2 Dictionary</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Search Bar Section -->
-        <div class="search-section">
-            <div class="search-bar">
-                <input type="search" id="dictionary-search-input" class="search-input" placeholder="Nhập từ cần tra...">
-                <div class="language-select-wrapper">
-                    <select id="dictionary-lang-selector" class="dictionary-lang-select">
-                        <option value="en-vi">Anh - Việt</option>
-                        <option value="vi-en">Việt - Anh</option>
-                        <option value="en-en">Anh - Anh</option>
-                    </select>
+            <div class="logo-wrapper">
+                <div class="logo-image-wrapper">
+                    <img src="../imgage/logo-utc.png" alt="UTC Logo" class="logo-image">
                 </div>
-                <div id="dictionary-search-btn" class="dictionary-search-button">
-                    <i class="fa-solid fa-magnifying-glass fa-sm"></i>
-                    <span>Tra từ</span>
+                <div class="logo-content">
+                    <a href="../index.html" class="logo-text-link">
+                        <h1 class="logo-text">UTC2 Dictionary</h1>
+                    </a>
+                    <p class="logo-subtitle">Liên hệ với chúng tôi</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Small Buttons Section -->
-        <div class="button-section dictionary-mode-tabs">
-            <button class="small-btn dict-mode-btn" data-mode="en-vi">ANH-VIỆT</button>
-            <button class="small-btn dict-mode-btn" data-mode="vi-en">VIỆT-ANH</button>
-            <button class="small-btn dict-mode-btn" data-mode="en-en">ANH-ANH</button>
         </div>
     </header>
 
@@ -90,12 +71,12 @@
                         class="fa-solid fa-x"></i></label>
             </div>
             <div class="menu__child"><a href="../index.html">Home</a></div>
-            <div class="menu__child"><a href="../Dictionnary/dictionnary.html" class="active">Dictionary</a></div>
+            <div class="menu__child"><a href="../Dictionnary/dictionnary.html">Dictionary</a></div>
             <div class="menu__child"><a href="../Translate/translate.html">Translate</a></div>
             <div class="menu__child"><a href="../Grammar/grammar.html">Grammar</a></div>
             <div class="menu__child"><a href="../Exercises/Exercises.html">Exercises</a></div>
             <div class="menu__child"><a href="../Writing/Writing.html">Writing Checker</a></div>
-            <div class="menu__child"><a href="../Contact/contact.html">Contact</a></div>
+            <div class="menu__child"><a href="../Contact/contact.html" class="active">Contact</a></div>
             <div class="menu__child">
                 <div class="social-icons">
                     <div>Follow us</div>
@@ -109,35 +90,90 @@
         <label class="menu-right" for="menu-button"></label>
     </div>
 
+    <!-- Main Contact Content -->
+    <main class="contact-main">
+        <div class="contact-container">
+            <!-- Contact Header -->
+            <div class="contact-header">
+                <h1 class="contact-title">
+                    <i class="fa-solid fa-envelope-circle-check"></i>
+                    Liên hệ với chúng tôi
+                </h1>
+                <p class="contact-subtitle">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn. Hãy liên hệ với chúng tôi qua các kênh sau:</p>
+            </div>
 
-    <!-- Main Dictionary Content -->
-    <main class="dictionary-main">
-        <div class="dictionary-container">
-            <!-- Search Result Area -->
-            <div id="dictionary-result" class="dictionary-result">
-                <div class="dictionary-welcome">
-                    <h1 class="dictionary-welcome-title">Tra cứu từ điển Anh-Việt</h1>
-                    <p class="dictionary-welcome-subtitle">Chọn chế độ tra cứu và nhập từ cần tra vào ô tìm kiếm.</p>
-                    
-                    <div class="dictionary-mode-card">
-                        <h2 class="dictionary-mode-card-title">Chế độ tra cứu</h2>
-                        <p class="dictionary-mode-card-description">Từ điển hỗ trợ tra cứu 2 chiều: từ tiếng Anh sang tiếng Việt và ngược lại.</p>
-                        <p class="dictionary-mode-card-description">Bạn có thể chọn chế độ phù hợp với nhu cầu của mình.</p>
-                        
-                        <div class="dictionary-mode-options">
-                            <button class="dictionary-mode-option" data-mode="en-vi">
-                                <span class="mode-arrow">→</span>
-                                <span class="mode-text">Anh - Việt</span>
-                            </button>
-                            <button class="dictionary-mode-option" data-mode="vi-en">
-                                <span class="mode-arrow">→</span>
-                                <span class="mode-text">Việt - Anh</span>
-                            </button>
-                            <button class="dictionary-mode-option" data-mode="en-en">
-                                <span class="mode-arrow">→</span>
-                                <span class="mode-text">Anh - Anh</span>
-                            </button>
+            <!-- Contact Cards -->
+            <div class="contact-cards">
+                <!-- Facebook Card -->
+                <div class="contact-card facebook-card">
+                    <div class="contact-card-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <h3 class="contact-card-title">Facebook</h3>
+                    <p class="contact-card-description">Theo dõi và tương tác với chúng tôi trên Facebook</p>
+                    <a href="https://www.facebook.com/utc2" target="_blank" class="contact-card-link" id="facebook-link">
+                        <i class="fa-solid fa-external-link"></i>
+                        Truy cập Facebook
+                    </a>
+                </div>
+
+                <!-- Email Card -->
+                <div class="contact-card email-card">
+                    <div class="contact-card-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-card-title">Email</h3>
+                    <p class="contact-card-description">Gửi email cho chúng tôi, chúng tôi sẽ phản hồi trong thời gian sớm nhất</p>
+                    <a href="mailto:contact@utc2.edu.vn" class="contact-card-link" id="email-link">
+                        <i class="fa-solid fa-envelope-open"></i>
+                        contact@utc2.edu.vn
+                    </a>
+                </div>
+
+                <!-- Address Card -->
+                <div class="contact-card address-card">
+                    <div class="contact-card-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="contact-card-title">Địa chỉ</h3>
+                    <p class="contact-card-description">Trường Đại học Giao thông Vận tải UTC2 Dictionary- Cơ sở 2</p>
+                    <div class="contact-card-address" id="address-info">
+                        <i class="fa-solid fa-building"></i>
+                        <div>
+                            <p><strong>Trường Đại học Giao thông Vận tải - Cơ sở 2 (UTC2)</strong></p>
+                            <p>Số 450 Lê Văn Việt, phường Tăng Nhơn Phú A, quận 9, Tp.HCM</p>
+                            <p>Việt Nam</p>
                         </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Trường+Đại+học+Giao+thông+Vận+tải+Cơ+sở+2" target="_blank" class="contact-card-link">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        Xem trên bản đồ
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional Info Section -->
+            <div class="contact-info-section">
+                <div class="contact-info-card">
+                    <h3 class="info-card-title">
+                        <i class="fa-solid fa-clock"></i>
+                        Thời gian làm việc
+                    </h3>
+                    <div class="info-card-content">
+                        <p><strong>Thứ 2 - Thứ 6:</strong> 8:00 - 17:00</p>
+                        <p><strong>Thứ 7:</strong> 8:00 - 12:00</p>
+                        <p><strong>Chủ nhật:</strong> Nghỉ</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <h3 class="info-card-title">
+                        <i class="fa-solid fa-phone"></i>
+                        Điện thoại
+                    </h3>
+                    <div class="info-card-content">
+                        <p><strong>Hotline:</strong> <a href="tel:+842876123456">(028) 7612 3456</a></p>
+                        <p><strong>Fax:</strong> (028) 7612 3457</p>
                     </div>
                 </div>
             </div>
@@ -162,7 +198,7 @@
                     <ul>
                         <li><a href="../Cambridge/vocabulary.html">Từ vựng</a></li>
                         <li><a href="#">Từ mới</a></li>
-                        <li><a href="#">Bài tập</a></li>
+                        <li><a href="../Exercises/Exercises.html">Bài tập</a></li>
                         <li><a href="#">Hướng dẫn</a></li>
                     </ul>
                 </div>
@@ -201,7 +237,8 @@
 
     <script src="../javascript/main.js"></script>
     <script src="../javascript/auth-status.js"></script>
-    <script src="../javascript/dictionary.js"></script>
+    <script src="../javascript/contact.js"></script>
 </body>
 
 </html>
+
